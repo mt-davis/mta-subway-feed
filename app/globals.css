@@ -1,26 +1,455 @@
 @import "tailwindcss";
 
+/* Tailwind v4: opt into class-based dark mode. The `dark` class is set on
+   <html> by lib/theme.ts (and the inline FOUC script in app/layout.tsx). */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0b1220;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.dark {
+  --background: #030712;
+  --foreground: #f9fafb;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ── Train marker base ─────────────────────────────────────────── */
+.train-marker {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 11px;
+  font-family: system-ui, sans-serif;
+  border: 2px solid rgba(255, 255, 255, 0.95);
+  /* Stacked rings: white border (above) + dark outer ring keeps light-colored
+     markers (L #A7A9AC, S #808183, N/Q/R/W #FCCC0A) visible on light street
+     blocks, while the soft drop-shadow stays clean when dozens overlap at
+     hubs like Times Square / Atlantic. */
+  box-shadow:
+    0 0 0 2.5px rgba(3, 7, 18, 0.85),
+    0 2px 10px rgba(0, 0, 0, 0.7);
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
+  user-select: none;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.35);
+}
+
+.train-marker:hover {
+  transform: scale(1.3);
+  box-shadow:
+    0 0 0 2px rgba(255, 255, 255, 1),
+    0 0 0 4px rgba(3, 7, 18, 0.9),
+    0 4px 18px rgba(0, 0, 0, 0.85);
+  z-index: 9999;
+}
+
+/* Light theme: swap the dark outer ring for one that contrasts against
+   the lighter CARTO basemap (otherwise markers visually merge into roads). */
+:where(html:not(.dark)) .train-marker {
+  border-color: rgba(15, 23, 42, 0.95);
+  box-shadow:
+    0 0 0 2.5px rgba(255, 255, 255, 0.95),
+    0 2px 8px rgba(15, 23, 42, 0.35);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.35);
+}
+:where(html:not(.dark)) .train-marker:hover {
+  box-shadow:
+    0 0 0 2px rgba(15, 23, 42, 0.95),
+    0 0 0 4px rgba(255, 255, 255, 0.95),
+    0 4px 16px rgba(15, 23, 42, 0.45);
+}
+
+/* Legend instances of `.train-marker` / `.train-cluster` are decorative —
+   suppress the hover-scale and pointer cursor so they read as static labels
+   (the user shouldn't think they're clickable map elements). */
+.legend-marker,
+.legend-marker:hover {
+  cursor: default;
+  transform: none;
+  z-index: auto;
+}
+.legend-marker:hover {
+  /* Recreate the resting box-shadow exactly so :hover doesn't briefly flash
+     the larger map-marker shadow stack on pointer-over. */
+  box-shadow:
+    0 0 0 2.5px rgba(3, 7, 18, 0.85),
+    0 2px 10px rgba(0, 0, 0, 0.7);
+}
+:where(html:not(.dark)) .legend-marker:hover {
+  box-shadow:
+    0 0 0 2.5px rgba(255, 255, 255, 0.95),
+    0 2px 8px rgba(15, 23, 42, 0.35);
+}
+
+/* ── Stopped train: glowing pulse ring ─────────────────────────── */
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 0.7; }
+  100% { transform: scale(2.2); opacity: 0;   }
+}
+
+.pulse-ring {
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid;           /* color set inline from route color */
+  animation: pulse-ring 1.8s ease-out infinite;
+  pointer-events: none;
+}
+
+/* ── Moving train: subtle rotation on the border ──────────────── */
+@keyframes spin-border {
+  from { transform: rotate(0deg);   }
+  to   { transform: rotate(360deg); }
+}
+
+.train-moving::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: rgba(255, 255, 255, 0.5);
+  animation: spin-border 1.2s linear infinite;
+  pointer-events: none;
+}
+:where(html:not(.dark)) .train-moving::before {
+  border-top-color: rgba(15, 23, 42, 0.55);
+}
+
+/* ── Marker cluster (low-zoom train aggregation) ───────────────── */
+.train-cluster-wrap {
+  background: transparent;
+  border: none;
+}
+
+.train-cluster {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0f172a;
+  box-shadow:
+    0 4px 14px rgba(0, 0, 0, 0.6),
+    0 0 0 2px rgba(15, 23, 42, 0.9) inset;
+  cursor: pointer;
+  transition: transform 0.15s ease-out;
+}
+
+:where(html:not(.dark)) .train-cluster {
+  background: #ffffff;
+  box-shadow:
+    0 4px 14px rgba(15, 23, 42, 0.25),
+    0 0 0 2px rgba(255, 255, 255, 1) inset;
+}
+
+.train-cluster::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  background: var(--rim);
+  opacity: 0.85;
+  z-index: -1;
+  -webkit-mask:
+    radial-gradient(circle, transparent 60%, black 62%);
+          mask:
+    radial-gradient(circle, transparent 60%, black 62%);
+}
+
+.train-cluster:hover {
+  transform: scale(1.08);
+}
+
+.train-cluster-count {
+  font-family: system-ui, sans-serif;
+  font-weight: 700;
+  color: #f9fafb;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+:where(html:not(.dark)) .train-cluster-count {
+  color: #0b1220;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6);
+}
+
+.train-cluster-sm { width: 32px; height: 32px; }
+.train-cluster-sm .train-cluster-count { font-size: 12px; }
+.train-cluster-md { width: 38px; height: 38px; }
+.train-cluster-md .train-cluster-count { font-size: 13px; }
+.train-cluster-lg { width: 46px; height: 46px; }
+.train-cluster-lg .train-cluster-count { font-size: 14px; }
+.train-cluster-xl { width: 54px; height: 54px; }
+.train-cluster-xl .train-cluster-count { font-size: 15px; }
+
+/* ── Station dots (Leaflet circleMarker, SVG paths) ────────────── */
+/* Leaflet renders these as <path> in the stations pane. We pass
+   className="station-dot" via L.circleMarker options so theme-driven CSS
+   handles fill+stroke without rebuilding the layer on theme change. */
+.station-dot {
+  stroke: #f9fafb;
+  fill: #0b1220;
+  stroke-opacity: 0.9;
+  fill-opacity: 0.85;
+}
+:where(html:not(.dark)) .station-dot {
+  stroke: #1f2937;
+  fill: #ffffff;
+}
+
+/* ── Leaflet popup ──────────────────────────────────────────────── */
+.leaflet-popup-content-wrapper {
+  background: #ffffff;
+  color: #0b1220;
+  border-radius: 12px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  box-shadow: 0 8px 32px rgba(15, 23, 42, 0.18);
+  padding: 0;
+}
+.leaflet-popup-tip {
+  background: #ffffff;
+}
+:where(html.dark) .leaflet-popup-content-wrapper {
+  background: #111827;
+  color: #f9fafb;
+  border-color: #1f2937;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+}
+:where(html.dark) .leaflet-popup-tip {
+  background: #111827;
+}
+
+.leaflet-popup-tip-container {
+  margin-top: -1px;
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  min-width: 220px;
+}
+
+.leaflet-popup-content p {
+  margin: 0;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  color: #9ca3af;
+  top: 8px;
+  right: 8px;
+  font-size: 18px;
+  padding: 4px 6px 0 0;
+}
+
+.leaflet-container a.leaflet-popup-close-button:hover {
+  color: #0b1220;
+}
+:where(html.dark) .leaflet-container a.leaflet-popup-close-button {
+  color: #6b7280;
+}
+:where(html.dark) .leaflet-container a.leaflet-popup-close-button:hover {
+  color: #f9fafb;
+}
+
+/* ── Train popup (custom layout inside Leaflet popup) ───────────── */
+.train-popup {
+  font-family: system-ui, -apple-system, sans-serif;
+  padding: 14px 16px 12px;
+  width: 220px;
+}
+
+.train-popup-head {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding-right: 14px; /* room for close button */
+}
+
+.train-popup-bullet {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 14px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  font-family: system-ui, sans-serif;
+}
+
+.train-popup-title { min-width: 0; flex: 1; }
+
+.train-popup-route {
+  font-weight: 600;
+  font-size: 14px;
+  color: #0b1220;
+  line-height: 1.2;
+}
+:where(html.dark) .train-popup-route {
+  color: #f9fafb;
+}
+
+.train-popup-express {
+  display: inline-block;
+  margin-left: 4px;
+  padding: 1px 5px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #b45309;
+  background: rgba(251, 191, 36, 0.18);
+  border: 1px solid rgba(251, 191, 36, 0.55);
+  border-radius: 3px;
+  vertical-align: 2px;
+}
+:where(html.dark) .train-popup-express {
+  color: #fbbf24;
+  background: rgba(251, 191, 36, 0.12);
+  border-color: rgba(251, 191, 36, 0.45);
+}
+
+.station-tooltip {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #0b1220 !important;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  padding: 3px 6px !important;
+  border-radius: 4px !important;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.18) !important;
+}
+:where(html.dark) .station-tooltip {
+  background: rgba(17, 24, 39, 0.92) !important;
+  color: #f9fafb !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4) !important;
+}
+.station-tooltip::before {
+  display: none !important;
+}
+
+.train-popup-status {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  font-weight: 500;
+  margin-top: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.train-popup-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.train-popup-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 0;
+  border-top: 1px solid rgba(15, 23, 42, 0.12);
+}
+:where(html.dark) .train-popup-body {
+  border-top-color: rgba(75, 85, 99, 0.3);
+}
+
+.train-popup-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.train-popup-label {
+  color: #6b7280;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  flex-shrink: 0;
+  width: 64px;
+}
+:where(html.dark) .train-popup-label {
+  color: #9ca3af;
+}
+
+.train-popup-value {
+  color: #1f2937;
+  flex: 1;
+  min-width: 0;
+}
+:where(html.dark) .train-popup-value {
+  color: #e5e7eb;
+}
+
+.train-popup-stop {
+  font-weight: 500;
+  word-break: break-word;
+}
+
+.train-popup-eta {
+  color: #2563eb;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+:where(html.dark) .train-popup-eta {
+  color: #60a5fa;
+}
+
+.train-popup-foot {
+  font-size: 10px;
+  color: #6b7280;
+  padding-top: 6px;
+  border-top: 1px solid rgba(15, 23, 42, 0.12);
+}
+:where(html.dark) .train-popup-foot {
+  border-top-color: rgba(75, 85, 99, 0.3);
+}
+
+/* ── Leaflet zoom control ─────────────────────────────────────── */
+:where(html:not(.dark)) .leaflet-bar a {
+  background: #ffffff;
+  color: #1f2937;
+  border-bottom-color: rgba(15, 23, 42, 0.12);
+}
+:where(html:not(.dark)) .leaflet-bar a:hover {
+  background: #f3f4f6;
+}
+
+/* ── Attribution control ──────────────────────────────────────── */
+:where(html.dark) .leaflet-control-attribution {
+  background: rgba(17, 24, 39, 0.85) !important;
+  color: #d1d5db !important;
+}
+:where(html.dark) .leaflet-control-attribution a {
+  color: #93c5fd !important;
 }
