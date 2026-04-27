@@ -9,6 +9,7 @@ A zero-friction, single-page web app that fetches all eight MTA GTFS-realtime fe
 ---
 
 ## Why this exists
+I did it for Fun! 😁
 
 Most "subway tracker" experiences make you pick a line, pick a station, and squint at a list of arrival times. That's fine if you already know which train you want. But there's a different question worth answering at a glance:
 
@@ -148,7 +149,6 @@ A few non-obvious calls I'd want a new contributor to understand before changing
 | **`removeOutsideVisibleBounds: true` on the cluster group** | Off-screen markers are removed from the DOM. Combined with a "skip if no DOM element" guard in the RAF loop, hidden trains cost nothing. |
 | **TileLayer URL is *swapped*, not remounted, on theme change** | Earlier code remounted via `key={theme}`, which blanked the map for a frame. Letting react-leaflet propagate the prop change uses Leaflet's built-in fade. |
 | **Map hard-clamped to NYC bounds** | There are no trains in the Atlantic. Letting the user pan/zoom there is a footgun, not a feature. |
-| **`AGENTS.md` and `CLAUDE.md` are gitignored** | Local-only AI agent context files. Not part of the shipped product. |
 
 ---
 
