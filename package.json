@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "stations:fetch": "node scripts/fetch-station-osm.mjs",
+    "stations:build": "node scripts/build-station-3d.mjs"
   },
   "dependencies": {
     "@turf/turf": "^7.3.5",

@@ -1,0 +1,19 @@
+{
+  "id": "union-square",
+  "name": "14th St–Union Square",
+  "center": { "lat": 40.734673, "lon": -73.989951 },
+  "radiusM": 250,
+  "levelToDepthM": {
+    "0": 0,
+    "-1": -4,
+    "-2": -10,
+    "-3": -16
+  },
+  "platformOverrides": {
+    "way/509025007": { "line": "lex", "routes": ["4", "5", "6"] },
+    "way/509025013": { "line": "lex", "routes": ["4", "5", "6"] },
+    "way/509025035": { "line": "lex", "routes": ["4", "5", "6"] },
+    "way/509025036": { "line": "lex", "routes": ["4", "5", "6"] },
+    "way/509025060": { "line": "canarsie", "routes": ["L"] }
+  }
+}
