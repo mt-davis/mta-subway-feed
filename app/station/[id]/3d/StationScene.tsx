@@ -14,6 +14,7 @@ import {
 import { Ground } from "@/components/station3d/Ground";
 import { PlatformSlabs } from "@/components/station3d/PlatformSlabs";
 import { PlatformLabels } from "@/components/station3d/PlatformLabels";
+import { PlatformLights } from "@/components/station3d/PlatformLights";
 import { Tracks } from "@/components/station3d/Tracks";
 import { Stairs } from "@/components/station3d/Stairs";
 import { Entrances } from "@/components/station3d/Entrances";
@@ -105,13 +106,29 @@ export default function StationScene({ model }: { model: StationModel }) {
         }}
         shadows
       >
-        <color attach="background" args={["#0f172a"]} />
-        <fog attach="fog" args={["#0f172a", 80, 280]} />
+        {/* Slightly bluer-than-black background. Fog blends to a very
+            close color so the horizon doesn't hard-edge against the
+            background — the world appears to recede into haze instead
+            of clipping at fog far. */}
+        <color attach="background" args={["#0a1124"]} />
+        <fog attach="fog" args={["#13203a", 65, 260]} />
 
-        <ambientLight intensity={0.45} />
+        {/* Hemisphere fill: cool sky-blue from above, warm tungsten from
+            below. Replicates how light actually behaves at street level —
+            blue zenith bouncing off pavement that's been warmed by sodium
+            lamps. Keeps everything from looking flat-lit. */}
+        <hemisphereLight color="#9bc1ff" groundColor="#ffba85" intensity={0.45} />
+        {/* Slightly reduced ambient since hemi now does most of the fill.
+            Without this, low-detail surfaces (rails undersides, ramp
+            backs) bleach out. */}
+        <ambientLight intensity={0.22} />
+        {/* Warmer key light + a hair more intensity so the rail metallic
+            highlights pop. Position is the same off-axis "afternoon"
+            angle that's been working well for the cutaway. */}
         <directionalLight
+          color="#fff5e6"
           position={[20, 30, 10]}
-          intensity={1.1}
+          intensity={1.15}
           castShadow
           shadow-mapSize={[1024, 1024]}
           shadow-camera-left={-60}
@@ -123,6 +140,7 @@ export default function StationScene({ model }: { model: StationModel }) {
         <Ground />
         <Tracks tracks={model.tracks} origin={model.center} />
         <PlatformSlabs platforms={model.platforms} origin={model.center} />
+        <PlatformLights platforms={model.platforms} origin={model.center} />
         <PlatformLabels platforms={model.platforms} origin={model.center} />
         <Stairs stairs={model.stairs} origin={model.center} />
         <Entrances entrances={model.entrances} origin={model.center} />
