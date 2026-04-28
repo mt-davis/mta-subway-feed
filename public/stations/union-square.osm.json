@@ -1,0 +1,5444 @@
+{
+  "version": 0.6,
+  "generator": "Overpass API 0.7.62.11 87bfad18",
+  "osm3s": {
+    "timestamp_osm_base": "2026-04-28T11:30:15Z",
+    "copyright": "The data included in this document is from www.openstreetmap.org. The data is made available under ODbL."
+  },
+  "elements": [
+    {
+      "type": "node",
+      "id": 544355596,
+      "lat": 40.7357611,
+      "lon": -73.9906491,
+      "tags": {
+        "gtfs_stop_code": "R20",
+        "level": "-2",
+        "name": "14th Street–Union Square",
+        "name:ko": "14번가-유니언 스퀘어",
+        "network": "NYC Subway",
+        "opening_hours": "24/7",
+        "operator": "New York City Transit Authority",
+        "public_transport": "station",
+        "railway": "station",
+        "railway:ref": "15",
+        "short_name": "14 St–Union Sq",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q2631031",
+        "wikipedia": "en:14th Street–Union Square station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2611341941,
+      "lat": 40.734202,
+      "lon": -73.9895348,
+      "tags": {
+        "description": "all 4,5,6,<6>,L,N,Q,R,W trains",
+        "level": "0",
+        "railway": "subway_entrance",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2611341945,
+      "lat": 40.7342564,
+      "lon": -73.9896895,
+      "tags": {
+        "description": "all 4,5,6,<6>,L,N,Q,R,W trains",
+        "level": "0",
+        "railway": "subway_entrance",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2611341948,
+      "lat": 40.7344717,
+      "lon": -73.9901545,
+      "tags": {
+        "description": "all 4,5,6,<6>,L,N,Q,R,W trains",
+        "level": "0",
+        "railway": "subway_entrance",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2611341951,
+      "lat": 40.7345427,
+      "lon": -73.9903223,
+      "tags": {
+        "description": "all 4,5,6,<6>,L,N,Q,R,W trains",
+        "level": "0",
+        "railway": "subway_entrance",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2611341954,
+      "lat": 40.7344086,
+      "lon": -73.9894739,
+      "tags": {
+        "description": "all 4,5,6,<6>,L,N,Q,R,W trains",
+        "level": "0",
+        "railway": "subway_entrance",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2611341957,
+      "lat": 40.7352789,
+      "lon": -73.9911121,
+      "tags": {
+        "description": "all 4,5,6,<6>,L,N,Q,R,W trains",
+        "level": "0",
+        "railway": "subway_entrance",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2611395792,
+      "lat": 40.7353208,
+      "lon": -73.9902481,
+      "tags": {
+        "description": "all 4,5,6,<6>,L,N,Q,R,W trains",
+        "level": "0",
+        "railway": "subway_entrance",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2611395793,
+      "lat": 40.7365078,
+      "lon": -73.9904669,
+      "tags": {
+        "description": "all 4,5,6,<6>,L,N,Q,R,W trains",
+        "level": "0",
+        "railway": "subway_entrance",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2611395794,
+      "lat": 40.7363603,
+      "lon": -73.9905931,
+      "tags": {
+        "description": "all 4,5,6,<6>,L,N,Q,R,W trains",
+        "level": "0",
+        "railway": "subway_entrance",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2611395795,
+      "lat": 40.7348917,
+      "lon": -73.9913152,
+      "tags": {
+        "description": "all 4,5,6,<6>,L,N,Q,R,W trains",
+        "level": "0",
+        "railway": "subway_entrance",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 2611395796,
+      "lat": 40.7351919,
+      "lon": -73.9897851,
+      "tags": {
+        "description": "all 4,5,6,<6>,L,N,Q,R,W trains",
+        "level": "0",
+        "railway": "subway_entrance",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4762558054,
+      "lat": 40.7346297,
+      "lon": -73.9909083,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "Broadway/East 14th Street",
+        "network": "NYC Transit",
+        "network:wikidata": "Q1325591",
+        "network:wikipedia": "en:New York City Transit Authority",
+        "operator": "New York City Transit Authority",
+        "public_transport": "platform",
+        "ref": "404197",
+        "route_ref": "X7;X9;X12;X27;X28",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4762558056,
+      "lat": 40.7344668,
+      "lon": -73.9909411,
+      "tags": {
+        "bench": "no",
+        "bin": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "no",
+        "name": "Broadway/East 13th Street",
+        "network": "NYC Transit",
+        "network:wikidata": "Q1325591",
+        "network:wikipedia": "en:New York City Transit Authority",
+        "operator": "New York City Transit Authority",
+        "public_transport": "platform",
+        "ref": "404993",
+        "route_ref": "X1;X10;X10B;X17",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 4983147899,
+      "lat": 40.7347546,
+      "lon": -73.99099,
+      "tags": {
+        "description": "all 4,5,6,<6>,L,N,Q,R,W trains",
+        "level": "0",
+        "railway": "subway_entrance",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5123035427,
+      "lat": 40.7354172,
+      "lon": -73.9919969,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "East 14th Street & Union Square West",
+        "network": "NYC Transit",
+        "network:wikidata": "Q1325591",
+        "public_transport": "platform",
+        "ref": "403893",
+        "route_ref": "M14A-SBS;M14D-SBS",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5243575473,
+      "lat": 40.7339833,
+      "lon": -73.9889722,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "East 14th Street & Irving Place",
+        "network": "NYC Transit",
+        "network:wikidata": "Q1325591",
+        "public_transport": "platform",
+        "ref": "403556",
+        "route_ref": "M14A-SBS;M14D-SBS;L92",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5248802689,
+      "lat": 40.7335552,
+      "lon": -73.9875592,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "East 14th Street & 3rd Avenue",
+        "network": "NYC Transit",
+        "network:wikidata": "Q1325591",
+        "public_transport": "platform",
+        "ref": "403871",
+        "route_ref": "M14A-SBS;M14D-SBS",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5265720110,
+      "lat": 40.7356909,
+      "lon": -73.9894355,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Union Square East & East 15th Street",
+        "public_transport": "platform",
+        "ref": "404120",
+        "route_ref": "M2",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5265720467,
+      "lat": 40.7341217,
+      "lon": -73.9899821,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "4th Avenue & East 14th Street",
+        "public_transport": "platform",
+        "ref:signed": "no",
+        "shelter": "yes",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 5265752810,
+      "lat": 40.7357648,
+      "lon": -73.989394,
+      "tags": {
+        "bench": "no",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "Union Square East & East 15th Street",
+        "public_transport": "platform",
+        "ref:signed": "no",
+        "route_ref": "M1;M3",
+        "shelter": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "node",
+      "id": 6573371099,
+      "lat": 40.7347942,
+      "lon": -73.9899805,
+      "tags": {
+        "level": "-2",
+        "name": "14th Street–Union Square",
+        "name:ko": "14번가-유니언 스퀘어",
+        "network": "NYC Subway",
+        "opening_hours": "24/7",
+        "operator": "New York City Transit Authority",
+        "public_transport": "station",
+        "railway": "station",
+        "railway:ref": "406",
+        "short_name": "14 St–Union Sq",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "no",
+        "wikidata": "Q2631031",
+        "wikipedia": "en:14th Street–Union Square station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7523716838,
+      "lat": 40.734603,
+      "lon": -73.9903599,
+      "tags": {
+        "gtfs_stop_code": "L03",
+        "level": "-3",
+        "name": "Union Square",
+        "name:ko": "유니언 스퀘어",
+        "network": "NYC Subway",
+        "opening_hours": "24/7",
+        "operator": "New York City Transit Authority",
+        "public_transport": "station",
+        "railway": "station",
+        "railway:ref": "117",
+        "short_name": "Union Sq",
+        "station": "subway",
+        "subway": "yes",
+        "wheelchair": "yes",
+        "wikidata": "Q2631031",
+        "wikipedia": "en:14th Street–Union Square station"
+      }
+    },
+    {
+      "type": "node",
+      "id": 7668123469,
+      "lat": 40.7344846,
+      "lon": -73.9896505,
+      "tags": {
+        "description": "all 4,5,6,<6>,L,N,Q,R,W trains",
+        "highway": "elevator",
+        "level": "-1;0",
+        "railway": "subway_entrance",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 8569045559,
+      "lat": 40.733822,
+      "lon": -73.9897328,
+      "tags": {
+        "bench": "yes",
+        "bus": "yes",
+        "covered": "yes",
+        "highway": "bus_stop",
+        "public_transport": "platform",
+        "shelter": "yes"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11040029968,
+      "lat": 40.7342983,
+      "lon": -73.9893461,
+      "tags": {
+        "bus": "yes",
+        "highway": "bus_stop",
+        "name": "East 14th Street & 4th Avenue",
+        "network": "NYC Transit",
+        "network:wikidata": "Q1325591",
+        "public_transport": "platform",
+        "ref": "403906",
+        "route_ref": "M14A-SBS;M14D-SBS"
+      }
+    },
+    {
+      "type": "node",
+      "id": 11040080993,
+      "lat": 40.7352074,
+      "lon": -73.9919396,
+      "tags": {
+        "bench": "no",
+        "bin": "yes",
+        "bus": "yes",
+        "highway": "bus_stop",
+        "lit": "yes",
+        "name": "East 14th Street & University Place",
+        "network": "NYC Transit",
+        "network:wikidata": "Q1325591",
+        "public_transport": "platform",
+        "ref": "404271",
+        "route_ref": "M14A-SBS;M14D-SBS",
+        "shelter": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 46340228,
+      "bounds": {
+        "minlat": 40.7230309,
+        "minlon": -73.9987914,
+        "maxlat": 40.7330823,
+        "maxlon": -73.9911238
+      },
+      "nodes": [
+        7667533980,
+        7596765953,
+        7596765954,
+        591995496,
+        886702544,
+        591995720,
+        7596192195,
+        7596192194,
+        591995958,
+        4747401773,
+        7633939021,
+        591995960,
+        7601147670
+      ],
+      "geometry": [
+        {
+          "lat": 40.7230309,
+          "lon": -73.9987914
+        },
+        {
+          "lat": 40.7242964,
+          "lon": -73.9977202
+        },
+        {
+          "lat": 40.7243547,
+          "lon": -73.9976708
+        },
+        {
+          "lat": 40.7247527,
+          "lon": -73.9973339
+        },
+        {
+          "lat": 40.7272482,
+          "lon": -73.9952214
+        },
+        {
+          "lat": 40.7287486,
+          "lon": -73.9939513
+        },
+        {
+          "lat": 40.730144,
+          "lon": -73.99277
+        },
+        {
+          "lat": 40.7304231,
+          "lon": -73.9925338
+        },
+        {
+          "lat": 40.7315908,
+          "lon": -73.9915459
+        },
+        {
+          "lat": 40.7316857,
+          "lon": -73.9914724
+        },
+        {
+          "lat": 40.7317882,
+          "lon": -73.9914194
+        },
+        {
+          "lat": 40.7318957,
+          "lon": -73.9913884
+        },
+        {
+          "lat": 40.7330823,
+          "lon": -73.9911238
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-1",
+        "level": "-1",
+        "name": "BMT Broadway Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "4",
+        "railway:track_ref:signals": "A4",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 321059671,
+      "bounds": {
+        "minlat": 40.7163187,
+        "minlon": -74.0023803,
+        "maxlat": 40.7325888,
+        "maxlon": -73.989991
+      },
+      "nodes": [
+        1695334117,
+        1695334023,
+        8410583126,
+        7142969934,
+        7630624220,
+        1695334065,
+        8427197814,
+        7596765950,
+        8427197802,
+        8427197803,
+        1695334044,
+        1695334068,
+        1695334113,
+        8427246937,
+        8427246940,
+        7142969935,
+        1695334105,
+        7630624225,
+        7630624224,
+        7596192193,
+        8427216122,
+        8427216123,
+        8427216130,
+        8427216131,
+        8427216132,
+        8427216133,
+        4234579110,
+        1695334030
+      ],
+      "geometry": [
+        {
+          "lat": 40.7163187,
+          "lon": -74.0023803
+        },
+        {
+          "lat": 40.7177766,
+          "lon": -74.0010519
+        },
+        {
+          "lat": 40.7181221,
+          "lon": -74.0007372
+        },
+        {
+          "lat": 40.7192738,
+          "lon": -73.9996881
+        },
+        {
+          "lat": 40.7199127,
+          "lon": -73.9991061
+        },
+        {
+          "lat": 40.7214839,
+          "lon": -73.9977693
+        },
+        {
+          "lat": 40.7220664,
+          "lon": -73.9972879
+        },
+        {
+          "lat": 40.7222184,
+          "lon": -73.9971622
+        },
+        {
+          "lat": 40.7223996,
+          "lon": -73.997043
+        },
+        {
+          "lat": 40.7225965,
+          "lon": -73.9969433
+        },
+        {
+          "lat": 40.7233276,
+          "lon": -73.9966481
+        },
+        {
+          "lat": 40.7234476,
+          "lon": -73.9965891
+        },
+        {
+          "lat": 40.7235552,
+          "lon": -73.9965145
+        },
+        {
+          "lat": 40.7250001,
+          "lon": -73.9953391
+        },
+        {
+          "lat": 40.7258484,
+          "lon": -73.9946491
+        },
+        {
+          "lat": 40.7261658,
+          "lon": -73.9944155
+        },
+        {
+          "lat": 40.7271898,
+          "lon": -73.9936602
+        },
+        {
+          "lat": 40.7292248,
+          "lon": -73.9919351
+        },
+        {
+          "lat": 40.7296654,
+          "lon": -73.9915574
+        },
+        {
+          "lat": 40.7297872,
+          "lon": -73.9914223
+        },
+        {
+          "lat": 40.7300601,
+          "lon": -73.991007
+        },
+        {
+          "lat": 40.7301677,
+          "lon": -73.9908757
+        },
+        {
+          "lat": 40.7302916,
+          "lon": -73.9907677
+        },
+        {
+          "lat": 40.7305871,
+          "lon": -73.9905514
+        },
+        {
+          "lat": 40.7307289,
+          "lon": -73.9904702
+        },
+        {
+          "lat": 40.7308847,
+          "lon": -73.9904147
+        },
+        {
+          "lat": 40.7309307,
+          "lon": -73.9904032
+        },
+        {
+          "lat": 40.7325888,
+          "lon": -73.989991
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-1",
+        "level": "-1",
+        "name": "IRT Lexington Avenue Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "4",
+        "railway:track_ref:signals": "MM3",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509024996,
+      "bounds": {
+        "minlat": 40.7352789,
+        "minlon": -73.9911121,
+        "maxlat": 40.7352889,
+        "maxlon": -73.9910309
+      },
+      "nodes": [
+        2611341957,
+        4983147326
+      ],
+      "geometry": [
+        {
+          "lat": 40.7352789,
+          "lon": -73.9911121
+        },
+        {
+          "lat": 40.7352889,
+          "lon": -73.9910309
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-1;0",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509024997,
+      "bounds": {
+        "minlat": 40.7349422,
+        "minlon": -73.9899215,
+        "maxlat": 40.7349635,
+        "maxlon": -73.9899202
+      },
+      "nodes": [
+        4983147329,
+        4983147328
+      ],
+      "geometry": [
+        {
+          "lat": 40.7349635,
+          "lon": -73.9899202
+        },
+        {
+          "lat": 40.7349422,
+          "lon": -73.9899215
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "level": "-1",
+        "surface": "asphalt"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025001,
+      "bounds": {
+        "minlat": 40.7326069,
+        "minlon": -73.9901386,
+        "maxlat": 40.7365982,
+        "maxlon": -73.9890716
+      },
+      "nodes": [
+        7630588801,
+        7630588802,
+        4983147416,
+        4983147410,
+        4983147409,
+        4983147408,
+        4983147407,
+        4983147406,
+        4983147405,
+        8423379691,
+        8423379692,
+        4983147403,
+        4983147402,
+        4983147401,
+        4983147400,
+        4983147399,
+        4983147398,
+        4983147397,
+        4983147396,
+        4983147395,
+        4983147393,
+        7630587647,
+        7630649287
+      ],
+      "geometry": [
+        {
+          "lat": 40.7365982,
+          "lon": -73.9890716
+        },
+        {
+          "lat": 40.7361468,
+          "lon": -73.9894025
+        },
+        {
+          "lat": 40.7359198,
+          "lon": -73.9896266
+        },
+        {
+          "lat": 40.7354134,
+          "lon": -73.9900117
+        },
+        {
+          "lat": 40.7353196,
+          "lon": -73.9900703
+        },
+        {
+          "lat": 40.7352207,
+          "lon": -73.9901058
+        },
+        {
+          "lat": 40.735106,
+          "lon": -73.9901303
+        },
+        {
+          "lat": 40.7349654,
+          "lon": -73.9901386
+        },
+        {
+          "lat": 40.7347483,
+          "lon": -73.9901167
+        },
+        {
+          "lat": 40.7346171,
+          "lon": -73.9900917
+        },
+        {
+          "lat": 40.7345021,
+          "lon": -73.9900568
+        },
+        {
+          "lat": 40.7343872,
+          "lon": -73.9900064
+        },
+        {
+          "lat": 40.7343139,
+          "lon": -73.9899819
+        },
+        {
+          "lat": 40.7341574,
+          "lon": -73.9899487
+        },
+        {
+          "lat": 40.7340245,
+          "lon": -73.9899355
+        },
+        {
+          "lat": 40.7339147,
+          "lon": -73.989929
+        },
+        {
+          "lat": 40.7337996,
+          "lon": -73.9899329
+        },
+        {
+          "lat": 40.7336916,
+          "lon": -73.9899377
+        },
+        {
+          "lat": 40.733601,
+          "lon": -73.9899447
+        },
+        {
+          "lat": 40.73348,
+          "lon": -73.9899561
+        },
+        {
+          "lat": 40.733257,
+          "lon": -73.9899848
+        },
+        {
+          "lat": 40.7329719,
+          "lon": -73.9900424
+        },
+        {
+          "lat": 40.7326069,
+          "lon": -73.9901243
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-2",
+        "level": "-2",
+        "name": "IRT Lexington Avenue Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "1",
+        "railway:track_ref:signals": "MM4",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025003,
+      "bounds": {
+        "minlat": 40.7350265,
+        "minlon": -73.9900764,
+        "maxlat": 40.7351299,
+        "maxlon": -73.9900756
+      },
+      "nodes": [
+        4983147420,
+        4983147419
+      ],
+      "geometry": [
+        {
+          "lat": 40.7351299,
+          "lon": -73.9900764
+        },
+        {
+          "lat": 40.7350265,
+          "lon": -73.9900756
+        }
+      ],
+      "tags": {
+        "description": "P12",
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025004,
+      "bounds": {
+        "minlat": 40.7347841,
+        "minlon": -73.9900506,
+        "maxlat": 40.7348275,
+        "maxlon": -73.9900445
+      },
+      "nodes": [
+        4983147722,
+        4983147721
+      ],
+      "geometry": [
+        {
+          "lat": 40.7348275,
+          "lon": -73.9900506
+        },
+        {
+          "lat": 40.7347841,
+          "lon": -73.9900445
+        }
+      ],
+      "tags": {
+        "description": "P10",
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025005,
+      "bounds": {
+        "minlat": 40.7346083,
+        "minlon": -73.9900362,
+        "maxlat": 40.7346601,
+        "maxlon": -73.9900266
+      },
+      "nodes": [
+        4983147724,
+        4983147723
+      ],
+      "geometry": [
+        {
+          "lat": 40.7346601,
+          "lon": -73.9900362
+        },
+        {
+          "lat": 40.7346083,
+          "lon": -73.9900266
+        }
+      ],
+      "tags": {
+        "description": "P8",
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025006,
+      "bounds": {
+        "minlat": 40.7344877,
+        "minlon": -73.9900038,
+        "maxlat": 40.7345318,
+        "maxlon": -73.9899981
+      },
+      "nodes": [
+        4983147726,
+        4983147725
+      ],
+      "geometry": [
+        {
+          "lat": 40.7345318,
+          "lon": -73.9900038
+        },
+        {
+          "lat": 40.7344877,
+          "lon": -73.9899981
+        }
+      ],
+      "tags": {
+        "description": "P5",
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025007,
+      "bounds": {
+        "minlat": 40.7343278,
+        "minlon": -73.9901184,
+        "maxlat": 40.7358455,
+        "maxlon": -73.9896051
+      },
+      "nodes": [
+        4983147760,
+        4983147759,
+        4983147758,
+        4983147757,
+        4983147756,
+        4983147755,
+        4983147754,
+        4983147753,
+        4983147752,
+        4983147751,
+        4983147750,
+        4983147749,
+        4983147747,
+        4983147746,
+        4983147745,
+        4983147744,
+        4983147743,
+        4983147742,
+        4983147741,
+        4983147740,
+        4983147739,
+        4983147738,
+        4983147737,
+        4983147736,
+        4983147735,
+        4983147734,
+        4983147733,
+        4983147732,
+        4983147731,
+        4983147730,
+        4983147729,
+        4983147728,
+        4983147727,
+        4983147760
+      ],
+      "geometry": [
+        {
+          "lat": 40.7343278,
+          "lon": -73.9899644
+        },
+        {
+          "lat": 40.7343315,
+          "lon": -73.9899482
+        },
+        {
+          "lat": 40.7344598,
+          "lon": -73.9899688
+        },
+        {
+          "lat": 40.7345563,
+          "lon": -73.989985
+        },
+        {
+          "lat": 40.7346883,
+          "lon": -73.9900064
+        },
+        {
+          "lat": 40.7348278,
+          "lon": -73.9900248
+        },
+        {
+          "lat": 40.7349475,
+          "lon": -73.9900314
+        },
+        {
+          "lat": 40.7350769,
+          "lon": -73.9900235
+        },
+        {
+          "lat": 40.7352037,
+          "lon": -73.9899976
+        },
+        {
+          "lat": 40.7353,
+          "lon": -73.989971
+        },
+        {
+          "lat": 40.7353971,
+          "lon": -73.9899209
+        },
+        {
+          "lat": 40.7354794,
+          "lon": -73.9898621
+        },
+        {
+          "lat": 40.7356778,
+          "lon": -73.9897179
+        },
+        {
+          "lat": 40.7357747,
+          "lon": -73.9896481
+        },
+        {
+          "lat": 40.7358272,
+          "lon": -73.9896088
+        },
+        {
+          "lat": 40.7358304,
+          "lon": -73.9896051
+        },
+        {
+          "lat": 40.7358455,
+          "lon": -73.9896476
+        },
+        {
+          "lat": 40.7357212,
+          "lon": -73.9897409
+        },
+        {
+          "lat": 40.7357152,
+          "lon": -73.9897594
+        },
+        {
+          "lat": 40.735548,
+          "lon": -73.9898788
+        },
+        {
+          "lat": 40.7354259,
+          "lon": -73.9899748
+        },
+        {
+          "lat": 40.7353335,
+          "lon": -73.9900406
+        },
+        {
+          "lat": 40.7352436,
+          "lon": -73.9900799
+        },
+        {
+          "lat": 40.7351601,
+          "lon": -73.9901031
+        },
+        {
+          "lat": 40.7350812,
+          "lon": -73.990118
+        },
+        {
+          "lat": 40.7349959,
+          "lon": -73.9901184
+        },
+        {
+          "lat": 40.7349157,
+          "lon": -73.9901149
+        },
+        {
+          "lat": 40.7348259,
+          "lon": -73.9901044
+        },
+        {
+          "lat": 40.7346597,
+          "lon": -73.9900769
+        },
+        {
+          "lat": 40.7345579,
+          "lon": -73.990055
+        },
+        {
+          "lat": 40.7345039,
+          "lon": -73.9900375
+        },
+        {
+          "lat": 40.7343985,
+          "lon": -73.9899924
+        },
+        {
+          "lat": 40.7343467,
+          "lon": -73.989971
+        },
+        {
+          "lat": 40.7343278,
+          "lon": -73.9899644
+        }
+      ],
+      "tags": {
+        "area": "yes",
+        "covered": "yes",
+        "destination": "Downtown & Brooklyn",
+        "layer": "-2",
+        "level": "-2",
+        "location": "underground",
+        "name": "14th Street–Union Square",
+        "network": "NYC Subway",
+        "operator": "New York City Transit Authority",
+        "operator:wikidata": "Q1325591",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025008,
+      "bounds": {
+        "minlat": 40.7343076,
+        "minlon": -73.9898353,
+        "maxlat": 40.7343487,
+        "maxlon": -73.9898288
+      },
+      "nodes": [
+        4983147762,
+        4983147761
+      ],
+      "geometry": [
+        {
+          "lat": 40.7343487,
+          "lon": -73.9898353
+        },
+        {
+          "lat": 40.7343076,
+          "lon": -73.9898288
+        }
+      ],
+      "tags": {
+        "description": "P1",
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025009,
+      "bounds": {
+        "minlat": 40.7345082,
+        "minlon": -73.9898616,
+        "maxlat": 40.7345447,
+        "maxlon": -73.9898533
+      },
+      "nodes": [
+        4983147764,
+        4983147763
+      ],
+      "geometry": [
+        {
+          "lat": 40.7345447,
+          "lon": -73.9898616
+        },
+        {
+          "lat": 40.7345082,
+          "lon": -73.9898533
+        }
+      ],
+      "tags": {
+        "description": "P6",
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025010,
+      "bounds": {
+        "minlat": 40.7345815,
+        "minlon": -73.9898703,
+        "maxlat": 40.7346176,
+        "maxlon": -73.9898625
+      },
+      "nodes": [
+        4983147766,
+        4983147765
+      ],
+      "geometry": [
+        {
+          "lat": 40.7346176,
+          "lon": -73.9898703
+        },
+        {
+          "lat": 40.7345815,
+          "lon": -73.9898625
+        }
+      ],
+      "tags": {
+        "description": "P9",
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025011,
+      "bounds": {
+        "minlat": 40.7347532,
+        "minlon": -73.9898892,
+        "maxlat": 40.7347917,
+        "maxlon": -73.9898865
+      },
+      "nodes": [
+        4983147768,
+        4983147767
+      ],
+      "geometry": [
+        {
+          "lat": 40.7347917,
+          "lon": -73.9898892
+        },
+        {
+          "lat": 40.7347532,
+          "lon": -73.9898865
+        }
+      ],
+      "tags": {
+        "description": "P11",
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025012,
+      "bounds": {
+        "minlat": 40.7348865,
+        "minlon": -73.9899338,
+        "maxlat": 40.7349346,
+        "maxlon": -73.9899281
+      },
+      "nodes": [
+        4983147770,
+        4983147769
+      ],
+      "geometry": [
+        {
+          "lat": 40.7349346,
+          "lon": -73.9899338
+        },
+        {
+          "lat": 40.7348865,
+          "lon": -73.9899281
+        }
+      ],
+      "tags": {
+        "description": "P12",
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025013,
+      "bounds": {
+        "minlat": 40.7333069,
+        "minlon": -73.9899525,
+        "maxlat": 40.7351952,
+        "maxlon": -73.989761
+      },
+      "nodes": [
+        4983147813,
+        4983147812,
+        4983147811,
+        4983147810,
+        4983147809,
+        4983147808,
+        4983147807,
+        4983147806,
+        4983147805,
+        4983147804,
+        4983147803,
+        4983147802,
+        4983147801,
+        4983147800,
+        4983147799,
+        4983147798,
+        4983147797,
+        4983147796,
+        4983147795,
+        4983147794,
+        4983147793,
+        4983147792,
+        4983147791,
+        4983147790,
+        4983147789,
+        4983147788,
+        4983147787,
+        4983147786,
+        4983147785,
+        4983147784,
+        4983147783,
+        4983147782,
+        4983147781,
+        4983147780,
+        4983147779,
+        4983147778,
+        4983147777,
+        4983147776,
+        4983147775,
+        4983147774,
+        8423379684,
+        4983147772,
+        4983147771,
+        4983147813
+      ],
+      "geometry": [
+        {
+          "lat": 40.7351952,
+          "lon": -73.9899141
+        },
+        {
+          "lat": 40.7351945,
+          "lon": -73.9899007
+        },
+        {
+          "lat": 40.7351355,
+          "lon": -73.9899036
+        },
+        {
+          "lat": 40.7350593,
+          "lon": -73.9899032
+        },
+        {
+          "lat": 40.734988,
+          "lon": -73.989894
+        },
+        {
+          "lat": 40.7349227,
+          "lon": -73.9898822
+        },
+        {
+          "lat": 40.7348368,
+          "lon": -73.9898712
+        },
+        {
+          "lat": 40.7347645,
+          "lon": -73.9898625
+        },
+        {
+          "lat": 40.734669,
+          "lon": -73.9898489
+        },
+        {
+          "lat": 40.7346146,
+          "lon": -73.989841
+        },
+        {
+          "lat": 40.7345208,
+          "lon": -73.9898296
+        },
+        {
+          "lat": 40.7343663,
+          "lon": -73.9898086
+        },
+        {
+          "lat": 40.7342652,
+          "lon": -73.989796
+        },
+        {
+          "lat": 40.7341647,
+          "lon": -73.9897833
+        },
+        {
+          "lat": 40.7340739,
+          "lon": -73.9897715
+        },
+        {
+          "lat": 40.7339989,
+          "lon": -73.9897662
+        },
+        {
+          "lat": 40.7339041,
+          "lon": -73.989761
+        },
+        {
+          "lat": 40.7338083,
+          "lon": -73.9897631
+        },
+        {
+          "lat": 40.7337124,
+          "lon": -73.9897662
+        },
+        {
+          "lat": 40.7336239,
+          "lon": -73.9897741
+        },
+        {
+          "lat": 40.7335364,
+          "lon": -73.9897855
+        },
+        {
+          "lat": 40.7334634,
+          "lon": -73.9897977
+        },
+        {
+          "lat": 40.7333941,
+          "lon": -73.9898209
+        },
+        {
+          "lat": 40.7333069,
+          "lon": -73.9898577
+        },
+        {
+          "lat": 40.7333076,
+          "lon": -73.9898712
+        },
+        {
+          "lat": 40.7333908,
+          "lon": -73.989859
+        },
+        {
+          "lat": 40.7335019,
+          "lon": -73.9898445
+        },
+        {
+          "lat": 40.7336063,
+          "lon": -73.9898305
+        },
+        {
+          "lat": 40.7337131,
+          "lon": -73.9898213
+        },
+        {
+          "lat": 40.73386,
+          "lon": -73.9898171
+        },
+        {
+          "lat": 40.7339578,
+          "lon": -73.9898191
+        },
+        {
+          "lat": 40.7340384,
+          "lon": -73.9898222
+        },
+        {
+          "lat": 40.7341093,
+          "lon": -73.9898327
+        },
+        {
+          "lat": 40.7342529,
+          "lon": -73.9898542
+        },
+        {
+          "lat": 40.7343716,
+          "lon": -73.989873
+        },
+        {
+          "lat": 40.7345082,
+          "lon": -73.9898931
+        },
+        {
+          "lat": 40.7346369,
+          "lon": -73.989915
+        },
+        {
+          "lat": 40.7347211,
+          "lon": -73.9899264
+        },
+        {
+          "lat": 40.7348524,
+          "lon": -73.9899447
+        },
+        {
+          "lat": 40.7349268,
+          "lon": -73.9899525
+        },
+        {
+          "lat": 40.7350054,
+          "lon": -73.989952
+        },
+        {
+          "lat": 40.7350911,
+          "lon": -73.9899347
+        },
+        {
+          "lat": 40.7351578,
+          "lon": -73.9899229
+        },
+        {
+          "lat": 40.7351952,
+          "lon": -73.9899141
+        }
+      ],
+      "tags": {
+        "area": "yes",
+        "covered": "yes",
+        "destination": "Uptown & The Bronx",
+        "layer": "-2",
+        "level": "-2",
+        "location": "underground",
+        "name": "14th Street–Union Square",
+        "network": "NYC Subway",
+        "operator": "New York City Transit Authority",
+        "operator:wikidata": "Q1325591",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes",
+        "wheelchair": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025014,
+      "bounds": {
+        "minlat": 40.7342363,
+        "minlon": -73.9896895,
+        "maxlat": 40.7342564,
+        "maxlon": -73.9896319
+      },
+      "nodes": [
+        2611341945,
+        4983147815
+      ],
+      "geometry": [
+        {
+          "lat": 40.7342564,
+          "lon": -73.9896895
+        },
+        {
+          "lat": 40.7342363,
+          "lon": -73.9896319
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-1;0",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025015,
+      "bounds": {
+        "minlat": 40.734202,
+        "minlon": -73.9895936,
+        "maxlat": 40.7342231,
+        "maxlon": -73.9895348
+      },
+      "nodes": [
+        4983147818,
+        2611341941
+      ],
+      "geometry": [
+        {
+          "lat": 40.7342231,
+          "lon": -73.9895936
+        },
+        {
+          "lat": 40.734202,
+          "lon": -73.9895348
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-1;0",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025016,
+      "bounds": {
+        "minlat": 40.7350536,
+        "minlon": -73.989805,
+        "maxlat": 40.7351919,
+        "maxlon": -73.9897851
+      },
+      "nodes": [
+        2611395796,
+        4983147820,
+        4983147819
+      ],
+      "geometry": [
+        {
+          "lat": 40.7351919,
+          "lon": -73.9897851
+        },
+        {
+          "lat": 40.7351639,
+          "lon": -73.989805
+        },
+        {
+          "lat": 40.7350536,
+          "lon": -73.9897852
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-1;0",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025019,
+      "bounds": {
+        "minlat": 40.7350292,
+        "minlon": -73.9906541,
+        "maxlat": 40.7350965,
+        "maxlon": -73.9906361
+      },
+      "nodes": [
+        4983147827,
+        4983147826
+      ],
+      "geometry": [
+        {
+          "lat": 40.7350292,
+          "lon": -73.9906541
+        },
+        {
+          "lat": 40.7350965,
+          "lon": -73.9906361
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025020,
+      "bounds": {
+        "minlat": 40.7351065,
+        "minlon": -73.9906373,
+        "maxlat": 40.7351792,
+        "maxlon": -73.9906182
+      },
+      "nodes": [
+        4983147829,
+        4983147828
+      ],
+      "geometry": [
+        {
+          "lat": 40.7351792,
+          "lon": -73.9906182
+        },
+        {
+          "lat": 40.7351065,
+          "lon": -73.9906373
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025022,
+      "bounds": {
+        "minlat": 40.7361068,
+        "minlon": -73.9903988,
+        "maxlat": 40.7361567,
+        "maxlon": -73.990391
+      },
+      "nodes": [
+        4983147833,
+        4983147832
+      ],
+      "geometry": [
+        {
+          "lat": 40.7361068,
+          "lon": -73.9903988
+        },
+        {
+          "lat": 40.7361567,
+          "lon": -73.990391
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025023,
+      "bounds": {
+        "minlat": 40.7362055,
+        "minlon": -73.9903787,
+        "maxlat": 40.7362638,
+        "maxlon": -73.9903639
+      },
+      "nodes": [
+        4983147835,
+        4983147834
+      ],
+      "geometry": [
+        {
+          "lat": 40.7362055,
+          "lon": -73.9903787
+        },
+        {
+          "lat": 40.7362638,
+          "lon": -73.9903639
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025024,
+      "bounds": {
+        "minlat": 40.7362278,
+        "minlon": -73.9905302,
+        "maxlat": 40.7363459,
+        "maxlon": -73.9905075
+      },
+      "nodes": [
+        4983147837,
+        4983147836
+      ],
+      "geometry": [
+        {
+          "lat": 40.7362278,
+          "lon": -73.9905302
+        },
+        {
+          "lat": 40.7363459,
+          "lon": -73.9905075
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025025,
+      "bounds": {
+        "minlat": 40.7361264,
+        "minlon": -73.9905509,
+        "maxlat": 40.7361793,
+        "maxlon": -73.9905393
+      },
+      "nodes": [
+        4983147839,
+        4983147838
+      ],
+      "geometry": [
+        {
+          "lat": 40.7361264,
+          "lon": -73.9905509
+        },
+        {
+          "lat": 40.7361793,
+          "lon": -73.9905393
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025027,
+      "bounds": {
+        "minlat": 40.7351272,
+        "minlon": -73.990789,
+        "maxlat": 40.7351944,
+        "maxlon": -73.9907717
+      },
+      "nodes": [
+        4983147843,
+        4983147842
+      ],
+      "geometry": [
+        {
+          "lat": 40.7351944,
+          "lon": -73.9907717
+        },
+        {
+          "lat": 40.7351272,
+          "lon": -73.990789
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025028,
+      "bounds": {
+        "minlat": 40.7350504,
+        "minlon": -73.9908039,
+        "maxlat": 40.735113,
+        "maxlon": -73.9907863
+      },
+      "nodes": [
+        4983147845,
+        4983147844
+      ],
+      "geometry": [
+        {
+          "lat": 40.7350504,
+          "lon": -73.9908039
+        },
+        {
+          "lat": 40.735113,
+          "lon": -73.9907863
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025029,
+      "bounds": {
+        "minlat": 40.7352113,
+        "minlon": -73.9906266,
+        "maxlat": 40.7352389,
+        "maxlon": -73.9905968
+      },
+      "nodes": [
+        4983147849,
+        4983147848,
+        4983147847,
+        4983147846,
+        4983147849
+      ],
+      "geometry": [
+        {
+          "lat": 40.7352389,
+          "lon": -73.9906209
+        },
+        {
+          "lat": 40.7352157,
+          "lon": -73.9906266
+        },
+        {
+          "lat": 40.7352113,
+          "lon": -73.9906003
+        },
+        {
+          "lat": 40.735235,
+          "lon": -73.9905968
+        },
+        {
+          "lat": 40.7352389,
+          "lon": -73.9906209
+        }
+      ],
+      "tags": {
+        "highway": "elevator",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025030,
+      "bounds": {
+        "minlat": 40.7352321,
+        "minlon": -73.9907729,
+        "maxlat": 40.7352599,
+        "maxlon": -73.990742
+      },
+      "nodes": [
+        4983147853,
+        4983147852,
+        4983147851,
+        4983147850,
+        4983147853
+      ],
+      "geometry": [
+        {
+          "lat": 40.7352599,
+          "lon": -73.9907676
+        },
+        {
+          "lat": 40.7352368,
+          "lon": -73.9907729
+        },
+        {
+          "lat": 40.7352321,
+          "lon": -73.9907468
+        },
+        {
+          "lat": 40.7352547,
+          "lon": -73.990742
+        },
+        {
+          "lat": 40.7352599,
+          "lon": -73.9907676
+        }
+      ],
+      "tags": {
+        "highway": "elevator",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025035,
+      "bounds": {
+        "minlat": 40.7349022,
+        "minlon": -73.9907133,
+        "maxlat": 40.7365654,
+        "maxlon": -73.990276
+      },
+      "nodes": [
+        4983147878,
+        4983147877,
+        4983147876,
+        4983147875,
+        4983147870,
+        4983147869,
+        4983147867,
+        4983147865,
+        4983147874,
+        4983147873,
+        4983147863,
+        4983147871,
+        4983147864,
+        4983147866,
+        4983147868,
+        4983147878
+      ],
+      "geometry": [
+        {
+          "lat": 40.7365369,
+          "lon": -73.9903364
+        },
+        {
+          "lat": 40.7365363,
+          "lon": -73.9903269
+        },
+        {
+          "lat": 40.7365654,
+          "lon": -73.9903184
+        },
+        {
+          "lat": 40.7365603,
+          "lon": -73.990276
+        },
+        {
+          "lat": 40.7365288,
+          "lon": -73.9902824
+        },
+        {
+          "lat": 40.736469,
+          "lon": -73.9902947
+        },
+        {
+          "lat": 40.7364074,
+          "lon": -73.990307
+        },
+        {
+          "lat": 40.7362716,
+          "lon": -73.9903357
+        },
+        {
+          "lat": 40.7349357,
+          "lon": -73.9906385
+        },
+        {
+          "lat": 40.734936,
+          "lon": -73.9906441
+        },
+        {
+          "lat": 40.7349022,
+          "lon": -73.9906493
+        },
+        {
+          "lat": 40.7349065,
+          "lon": -73.9907133
+        },
+        {
+          "lat": 40.7361303,
+          "lon": -73.9904343
+        },
+        {
+          "lat": 40.7363215,
+          "lon": -73.9903894
+        },
+        {
+          "lat": 40.7364116,
+          "lon": -73.990367
+        },
+        {
+          "lat": 40.7365369,
+          "lon": -73.9903364
+        }
+      ],
+      "tags": {
+        "area": "yes",
+        "covered": "yes",
+        "destination": "Uptown & Queens",
+        "gtfs:stop_id": "R20N",
+        "layer": "-2",
+        "level": "-2",
+        "location": "underground",
+        "name": "14th Street–Union Square",
+        "network": "NYC Subway",
+        "operator": "New York City Transit Authority",
+        "operator:wikidata": "Q1325591",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025036,
+      "bounds": {
+        "minlat": 40.7349197,
+        "minlon": -73.9908631,
+        "maxlat": 40.736582,
+        "maxlon": -73.9904286
+      },
+      "nodes": [
+        4983147894,
+        4983147893,
+        4983147885,
+        4983147884,
+        4983147883,
+        4983147882,
+        4983147881,
+        10174832387,
+        4983147880,
+        4983147879,
+        4983147892,
+        4983147891,
+        4983147890,
+        4983147889,
+        4983147888,
+        4983147887,
+        4983147886,
+        4983147894
+      ],
+      "geometry": [
+        {
+          "lat": 40.7349522,
+          "lon": -73.990856
+        },
+        {
+          "lat": 40.7349531,
+          "lon": -73.9908631
+        },
+        {
+          "lat": 40.7352618,
+          "lon": -73.9907912
+        },
+        {
+          "lat": 40.7354231,
+          "lon": -73.9907549
+        },
+        {
+          "lat": 40.7355262,
+          "lon": -73.9907316
+        },
+        {
+          "lat": 40.7356756,
+          "lon": -73.990697
+        },
+        {
+          "lat": 40.7357994,
+          "lon": -73.9906697
+        },
+        {
+          "lat": 40.7358265,
+          "lon": -73.9906634
+        },
+        {
+          "lat": 40.7360119,
+          "lon": -73.9906201
+        },
+        {
+          "lat": 40.736285,
+          "lon": -73.9905573
+        },
+        {
+          "lat": 40.736582,
+          "lon": -73.9904751
+        },
+        {
+          "lat": 40.7365752,
+          "lon": -73.9904291
+        },
+        {
+          "lat": 40.7365471,
+          "lon": -73.9904354
+        },
+        {
+          "lat": 40.7365454,
+          "lon": -73.9904286
+        },
+        {
+          "lat": 40.7349201,
+          "lon": -73.9908001
+        },
+        {
+          "lat": 40.7349197,
+          "lon": -73.9908038
+        },
+        {
+          "lat": 40.7349268,
+          "lon": -73.9908628
+        },
+        {
+          "lat": 40.7349522,
+          "lon": -73.990856
+        }
+      ],
+      "tags": {
+        "area": "yes",
+        "covered": "yes",
+        "destination": "Downtown & Brooklyn",
+        "gtfs:stop_id": "R20S",
+        "layer": "-2",
+        "level": "-2",
+        "location": "underground",
+        "name": "14th Street–Union Square",
+        "network": "NYC Subway",
+        "operator": "New York City Transit Authority",
+        "operator:wikidata": "Q1325591",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025038,
+      "bounds": {
+        "minlat": 40.7348496,
+        "minlon": -73.9913152,
+        "maxlat": 40.7348917,
+        "maxlon": -73.9912065
+      },
+      "nodes": [
+        4983147898,
+        4983147897,
+        4983147896,
+        2611395795
+      ],
+      "geometry": [
+        {
+          "lat": 40.7348496,
+          "lon": -73.9912065
+        },
+        {
+          "lat": 40.7348631,
+          "lon": -73.9912367
+        },
+        {
+          "lat": 40.7348712,
+          "lon": -73.9912759
+        },
+        {
+          "lat": 40.7348917,
+          "lon": -73.9913152
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-1;0",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025040,
+      "bounds": {
+        "minlat": 40.7347546,
+        "minlon": -73.991058,
+        "maxlat": 40.7348024,
+        "maxlon": -73.99099
+      },
+      "nodes": [
+        4983147902,
+        4983147901,
+        4983147900,
+        4983147899
+      ],
+      "geometry": [
+        {
+          "lat": 40.7348024,
+          "lon": -73.991058
+        },
+        {
+          "lat": 40.7347894,
+          "lon": -73.9910352
+        },
+        {
+          "lat": 40.7347645,
+          "lon": -73.9910147
+        },
+        {
+          "lat": 40.7347546,
+          "lon": -73.99099
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-1;0",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025048,
+      "bounds": {
+        "minlat": 40.7352721,
+        "minlon": -73.9903031,
+        "maxlat": 40.7353208,
+        "maxlon": -73.9902481
+      },
+      "nodes": [
+        2611395792,
+        4983147909
+      ],
+      "geometry": [
+        {
+          "lat": 40.7353208,
+          "lon": -73.9902481
+        },
+        {
+          "lat": 40.7352721,
+          "lon": -73.9903031
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "incline": "up",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-1;0",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025049,
+      "bounds": {
+        "minlat": 40.7349707,
+        "minlon": -73.9912165,
+        "maxlat": 40.7349888,
+        "maxlon": -73.991177
+      },
+      "nodes": [
+        4983147913,
+        4983147912
+      ],
+      "geometry": [
+        {
+          "lat": 40.7349707,
+          "lon": -73.991177
+        },
+        {
+          "lat": 40.7349888,
+          "lon": -73.9912165
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025050,
+      "bounds": {
+        "minlat": 40.7346267,
+        "minlon": -73.990424,
+        "maxlat": 40.7346478,
+        "maxlon": -73.9903739
+      },
+      "nodes": [
+        4983147915,
+        4983147914
+      ],
+      "geometry": [
+        {
+          "lat": 40.7346478,
+          "lon": -73.990424
+        },
+        {
+          "lat": 40.7346267,
+          "lon": -73.9903739
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025051,
+      "bounds": {
+        "minlat": 40.7345675,
+        "minlon": -73.9902858,
+        "maxlat": 40.7345867,
+        "maxlon": -73.9902375
+      },
+      "nodes": [
+        4983147917,
+        4983147916
+      ],
+      "geometry": [
+        {
+          "lat": 40.7345675,
+          "lon": -73.9902375
+        },
+        {
+          "lat": 40.7345867,
+          "lon": -73.9902858
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025052,
+      "bounds": {
+        "minlat": 40.7345139,
+        "minlon": -73.9901635,
+        "maxlat": 40.734547,
+        "maxlon": -73.9901164
+      },
+      "nodes": [
+        4983147922,
+        4983147921,
+        4983147920,
+        4983147919,
+        4983147918,
+        4983147922
+      ],
+      "geometry": [
+        {
+          "lat": 40.7345446,
+          "lon": -73.9901501
+        },
+        {
+          "lat": 40.734547,
+          "lon": -73.9901473
+        },
+        {
+          "lat": 40.7345339,
+          "lon": -73.9901164
+        },
+        {
+          "lat": 40.7345139,
+          "lon": -73.9901329
+        },
+        {
+          "lat": 40.7345273,
+          "lon": -73.9901635
+        },
+        {
+          "lat": 40.7345446,
+          "lon": -73.9901501
+        }
+      ],
+      "tags": {
+        "area": "yes",
+        "highway": "elevator",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-3;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025053,
+      "bounds": {
+        "minlat": 40.7347774,
+        "minlon": -73.9907411,
+        "maxlat": 40.7349447,
+        "maxlon": -73.990642
+      },
+      "nodes": [
+        4983147925,
+        4983147924,
+        4983147854
+      ],
+      "geometry": [
+        {
+          "lat": 40.7347919,
+          "lon": -73.9907411
+        },
+        {
+          "lat": 40.7347774,
+          "lon": -73.9906943
+        },
+        {
+          "lat": 40.7349447,
+          "lon": -73.990642
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-2",
+        "level": "-3;-2",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025055,
+      "bounds": {
+        "minlat": 40.7348145,
+        "minlon": -73.9908506,
+        "maxlat": 40.7349331,
+        "maxlon": -73.9908035
+      },
+      "nodes": [
+        4983147928,
+        4983147927,
+        4983147926
+      ],
+      "geometry": [
+        {
+          "lat": 40.7348145,
+          "lon": -73.9908035
+        },
+        {
+          "lat": 40.7348328,
+          "lon": -73.9908506
+        },
+        {
+          "lat": 40.7349331,
+          "lon": -73.990816
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-2",
+        "level": "-3;-2",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025059,
+      "bounds": {
+        "minlat": 40.7345232,
+        "minlon": -73.9903223,
+        "maxlat": 40.7345427,
+        "maxlon": -73.9902749
+      },
+      "nodes": [
+        4983147934,
+        2611341951
+      ],
+      "geometry": [
+        {
+          "lat": 40.7345232,
+          "lon": -73.9902749
+        },
+        {
+          "lat": 40.7345427,
+          "lon": -73.9903223
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-1;0",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025060,
+      "bounds": {
+        "minlat": 40.7344136,
+        "minlon": -73.991639,
+        "maxlat": 40.735191,
+        "maxlon": -73.9899008
+      },
+      "nodes": [
+        4983147939,
+        4983147938,
+        4983147937,
+        4983147936,
+        4983147939
+      ],
+      "geometry": [
+        {
+          "lat": 40.7344754,
+          "lon": -73.9899008
+        },
+        {
+          "lat": 40.735191,
+          "lon": -73.9915947
+        },
+        {
+          "lat": 40.7351298,
+          "lon": -73.991639
+        },
+        {
+          "lat": 40.7344136,
+          "lon": -73.9899424
+        },
+        {
+          "lat": 40.7344754,
+          "lon": -73.9899008
+        }
+      ],
+      "tags": {
+        "area": "yes",
+        "covered": "yes",
+        "layer": "-3",
+        "level": "-3",
+        "location": "underground",
+        "name": "Union Square",
+        "network": "NYC Subway",
+        "operator": "New York City Transit Authority",
+        "operator:wikidata": "Q1325591",
+        "public_transport": "platform",
+        "railway": "platform",
+        "subway": "yes",
+        "wheelchair": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025061,
+      "bounds": {
+        "minlat": 40.7350192,
+        "minlon": -73.9913461,
+        "maxlat": 40.7350431,
+        "maxlon": -73.9912985
+      },
+      "nodes": [
+        4983147941,
+        4983147940
+      ],
+      "geometry": [
+        {
+          "lat": 40.7350192,
+          "lon": -73.9912985
+        },
+        {
+          "lat": 40.7350431,
+          "lon": -73.9913461
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025062,
+      "bounds": {
+        "minlat": 40.7347988,
+        "minlon": -73.9910867,
+        "maxlat": 40.7348674,
+        "maxlon": -73.9910365
+      },
+      "nodes": [
+        4983147943,
+        4983147942
+      ],
+      "geometry": [
+        {
+          "lat": 40.7347988,
+          "lon": -73.9910867
+        },
+        {
+          "lat": 40.7348674,
+          "lon": -73.9910365
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-2;-1",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025063,
+      "bounds": {
+        "minlat": 40.7346609,
+        "minlon": -73.9911984,
+        "maxlat": 40.7347279,
+        "maxlon": -73.9911012
+      },
+      "nodes": [
+        4983147947,
+        4983147946,
+        4983147945,
+        4983147944
+      ],
+      "geometry": [
+        {
+          "lat": 40.7347279,
+          "lon": -73.9911984
+        },
+        {
+          "lat": 40.734713,
+          "lon": -73.9911643
+        },
+        {
+          "lat": 40.7346781,
+          "lon": -73.991142
+        },
+        {
+          "lat": 40.7346609,
+          "lon": -73.9911012
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-1;0",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 509025064,
+      "bounds": {
+        "minlat": 40.7347279,
+        "minlon": -73.9914042,
+        "maxlat": 40.7347722,
+        "maxlon": -73.9911984
+      },
+      "nodes": [
+        4983147947,
+        4983147950,
+        4983147949,
+        4983147948
+      ],
+      "geometry": [
+        {
+          "lat": 40.7347279,
+          "lon": -73.9911984
+        },
+        {
+          "lat": 40.7347663,
+          "lon": -73.9912936
+        },
+        {
+          "lat": 40.734764,
+          "lon": -73.9913365
+        },
+        {
+          "lat": 40.7347722,
+          "lon": -73.9914042
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "indoor": "yes",
+        "layer": "-1",
+        "level": "-1;0",
+        "location": "underground",
+        "tunnel": "yes"
+      }
+    },
+    {
+      "type": "way",
+      "id": 552261294,
+      "bounds": {
+        "minlat": 40.7337584,
+        "minlon": -74.0011144,
+        "maxlat": 40.739133,
+        "maxlon": -73.9883567
+      },
+      "nodes": [
+        7618745560,
+        7618745561,
+        5332358379,
+        5332358381,
+        5336193661,
+        591995883,
+        7618745569,
+        7618745565,
+        7560956393
+      ],
+      "geometry": [
+        {
+          "lat": 40.739133,
+          "lon": -74.0011144
+        },
+        {
+          "lat": 40.7379289,
+          "lon": -73.9982936
+        },
+        {
+          "lat": 40.7376352,
+          "lon": -73.997589
+        },
+        {
+          "lat": 40.7369956,
+          "lon": -73.9960578
+        },
+        {
+          "lat": 40.736744,
+          "lon": -73.9954746
+        },
+        {
+          "lat": 40.7361515,
+          "lon": -73.9940974
+        },
+        {
+          "lat": 40.7351177,
+          "lon": -73.9916483
+        },
+        {
+          "lat": 40.7344014,
+          "lon": -73.9899513
+        },
+        {
+          "lat": 40.7337584,
+          "lon": -73.9883567
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-3",
+        "level": "-3",
+        "name": "BMT Canarsie Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:cbtc": "sto",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "1",
+        "railway:track_ref:signals": "Q1",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 804373929,
+      "bounds": {
+        "minlat": 40.7365483,
+        "minlon": -73.9889532,
+        "maxlat": 40.7498674,
+        "maxlon": -73.9790983
+      },
+      "nodes": [
+        7601122722,
+        8427126932,
+        7595933456,
+        7142969941,
+        8427090535,
+        7595933451,
+        7142969921,
+        9147389619,
+        8427090429,
+        7142969930,
+        8427090425,
+        7630588789
+      ],
+      "geometry": [
+        {
+          "lat": 40.7365483,
+          "lon": -73.9889532
+        },
+        {
+          "lat": 40.7395704,
+          "lon": -73.9867441
+        },
+        {
+          "lat": 40.739687,
+          "lon": -73.9866588
+        },
+        {
+          "lat": 40.7408022,
+          "lon": -73.9858452
+        },
+        {
+          "lat": 40.7426808,
+          "lon": -73.9844746
+        },
+        {
+          "lat": 40.7432526,
+          "lon": -73.9840574
+        },
+        {
+          "lat": 40.7439152,
+          "lon": -73.9835762
+        },
+        {
+          "lat": 40.7452226,
+          "lon": -73.9825995
+        },
+        {
+          "lat": 40.7454614,
+          "lon": -73.9824377
+        },
+        {
+          "lat": 40.7467009,
+          "lon": -73.9815557
+        },
+        {
+          "lat": 40.7473709,
+          "lon": -73.9809789
+        },
+        {
+          "lat": 40.7498674,
+          "lon": -73.9790983
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-1",
+        "level": "-1",
+        "name": "IRT Lexington Avenue Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "4",
+        "railway:track_ref:signals": "MM3",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 808580928,
+      "bounds": {
+        "minlat": 40.7338024,
+        "minlon": -74.0010648,
+        "maxlat": 40.7391998,
+        "maxlon": -73.9883264
+      },
+      "nodes": [
+        7618745576,
+        7618745564,
+        7618745568,
+        7618745570,
+        7618745575,
+        5336193668,
+        5336193667,
+        5336193662,
+        7560956392
+      ],
+      "geometry": [
+        {
+          "lat": 40.7338024,
+          "lon": -73.9883264
+        },
+        {
+          "lat": 40.7344876,
+          "lon": -73.9898922
+        },
+        {
+          "lat": 40.7352039,
+          "lon": -73.9915879
+        },
+        {
+          "lat": 40.7362198,
+          "lon": -73.9940534
+        },
+        {
+          "lat": 40.7368122,
+          "lon": -73.9954304
+        },
+        {
+          "lat": 40.7370579,
+          "lon": -73.9960102
+        },
+        {
+          "lat": 40.7376975,
+          "lon": -73.9975419
+        },
+        {
+          "lat": 40.7379957,
+          "lon": -73.9982439
+        },
+        {
+          "lat": 40.7391998,
+          "lon": -74.0010648
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-3",
+        "level": "-3",
+        "name": "BMT Canarsie Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:cbtc": "sto",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "2",
+        "railway:track_ref:signals": "Q2",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 813721593,
+      "bounds": {
+        "minlat": 40.7324996,
+        "minlon": -73.9883567,
+        "maxlat": 40.7337584,
+        "maxlon": -73.9853429
+      },
+      "nodes": [
+        7560956393,
+        7618745567,
+        7595933445,
+        8421890918,
+        591996260
+      ],
+      "geometry": [
+        {
+          "lat": 40.7337584,
+          "lon": -73.9883567
+        },
+        {
+          "lat": 40.7335065,
+          "lon": -73.9877306
+        },
+        {
+          "lat": 40.7332436,
+          "lon": -73.9871015
+        },
+        {
+          "lat": 40.7331607,
+          "lon": -73.9869054
+        },
+        {
+          "lat": 40.7324996,
+          "lon": -73.9853429
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-1",
+        "level": "-1",
+        "name": "BMT Canarsie Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:cbtc": "sto",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "1",
+        "railway:track_ref:signals": "Q1",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 813742875,
+      "bounds": {
+        "minlat": 40.7325888,
+        "minlon": -73.989991,
+        "maxlat": 40.7365483,
+        "maxlon": -73.9889532
+      },
+      "nodes": [
+        1695334030,
+        1695334079,
+        4983147392,
+        4983147391,
+        4983147390,
+        4983147389,
+        4983147388,
+        4983147387,
+        4983147386,
+        4983147385,
+        4983147384,
+        4983147383,
+        4983147382,
+        8423379685,
+        8423379686,
+        8423379687,
+        8423379688,
+        4983147377,
+        4983147376,
+        4983147375,
+        4983147372,
+        5150514519,
+        7601122722
+      ],
+      "geometry": [
+        {
+          "lat": 40.7325888,
+          "lon": -73.989991
+        },
+        {
+          "lat": 40.7329555,
+          "lon": -73.9899087
+        },
+        {
+          "lat": 40.7332415,
+          "lon": -73.9898509
+        },
+        {
+          "lat": 40.7333795,
+          "lon": -73.9898014
+        },
+        {
+          "lat": 40.7334528,
+          "lon": -73.9897771
+        },
+        {
+          "lat": 40.7335994,
+          "lon": -73.989757
+        },
+        {
+          "lat": 40.7337456,
+          "lon": -73.9897439
+        },
+        {
+          "lat": 40.7338819,
+          "lon": -73.9897448
+        },
+        {
+          "lat": 40.7340062,
+          "lon": -73.9897461
+        },
+        {
+          "lat": 40.7341415,
+          "lon": -73.9897601
+        },
+        {
+          "lat": 40.7342844,
+          "lon": -73.989775
+        },
+        {
+          "lat": 40.734361,
+          "lon": -73.9897841
+        },
+        {
+          "lat": 40.7345062,
+          "lon": -73.9898047
+        },
+        {
+          "lat": 40.7346348,
+          "lon": -73.9898232
+        },
+        {
+          "lat": 40.7347898,
+          "lon": -73.9898442
+        },
+        {
+          "lat": 40.7349551,
+          "lon": -73.9898648
+        },
+        {
+          "lat": 40.7350935,
+          "lon": -73.9898874
+        },
+        {
+          "lat": 40.7351859,
+          "lon": -73.9898822
+        },
+        {
+          "lat": 40.7352812,
+          "lon": -73.9898585
+        },
+        {
+          "lat": 40.7353933,
+          "lon": -73.9897962
+        },
+        {
+          "lat": 40.7358502,
+          "lon": -73.9894649
+        },
+        {
+          "lat": 40.7360969,
+          "lon": -73.9892841
+        },
+        {
+          "lat": 40.7365483,
+          "lon": -73.9889532
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-2",
+        "level": "-2",
+        "name": "IRT Lexington Avenue Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "4",
+        "railway:track_ref:signals": "MM3",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 813742876,
+      "bounds": {
+        "minlat": 40.7330823,
+        "minlon": -73.9911238,
+        "maxlat": 40.7370987,
+        "maxlon": -73.9902507
+      },
+      "nodes": [
+        7601147670,
+        7633939020,
+        7633939019,
+        4983147862,
+        8423379693,
+        7656750824,
+        7633695605,
+        7523716836,
+        7523716835,
+        7657973049
+      ],
+      "geometry": [
+        {
+          "lat": 40.7330823,
+          "lon": -73.9911238
+        },
+        {
+          "lat": 40.7340694,
+          "lon": -73.9909155
+        },
+        {
+          "lat": 40.7345152,
+          "lon": -73.9908182
+        },
+        {
+          "lat": 40.7349127,
+          "lon": -73.9907263
+        },
+        {
+          "lat": 40.7349407,
+          "lon": -73.9907199
+        },
+        {
+          "lat": 40.7365359,
+          "lon": -73.9903551
+        },
+        {
+          "lat": 40.736647,
+          "lon": -73.9903334
+        },
+        {
+          "lat": 40.7367469,
+          "lon": -73.9903151
+        },
+        {
+          "lat": 40.7368348,
+          "lon": -73.990299
+        },
+        {
+          "lat": 40.7370987,
+          "lon": -73.9902507
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-2",
+        "level": "-2",
+        "name": "BMT Broadway Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "4",
+        "railway:track_ref:signals": "A4",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 815767577,
+      "bounds": {
+        "minlat": 40.7325357,
+        "minlon": -73.9883264,
+        "maxlat": 40.7338024,
+        "maxlon": -73.985317
+      },
+      "nodes": [
+        7618745578,
+        7618745571,
+        7618745566,
+        7618745576
+      ],
+      "geometry": [
+        {
+          "lat": 40.7325357,
+          "lon": -73.985317
+        },
+        {
+          "lat": 40.7331982,
+          "lon": -73.9868744
+        },
+        {
+          "lat": 40.7335434,
+          "lon": -73.9877067
+        },
+        {
+          "lat": 40.7338024,
+          "lon": -73.9883264
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-1",
+        "level": "-1",
+        "name": "BMT Canarsie Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:cbtc": "sto",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "2",
+        "railway:track_ref:signals": "Q2",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 817013577,
+      "bounds": {
+        "minlat": 40.7365649,
+        "minlon": -73.9889927,
+        "maxlat": 40.7498816,
+        "maxlon": -73.9791355
+      },
+      "nodes": [
+        7630588842,
+        7630558476,
+        7630558475,
+        7630558474,
+        7630558473,
+        9147389620,
+        7630588792,
+        8427090423,
+        8427090427,
+        7630588791
+      ],
+      "geometry": [
+        {
+          "lat": 40.7365649,
+          "lon": -73.9889927
+        },
+        {
+          "lat": 40.7397036,
+          "lon": -73.9866983
+        },
+        {
+          "lat": 40.7402014,
+          "lon": -73.9863352
+        },
+        {
+          "lat": 40.7432691,
+          "lon": -73.9840969
+        },
+        {
+          "lat": 40.7433315,
+          "lon": -73.9840514
+        },
+        {
+          "lat": 40.7452403,
+          "lon": -73.9826484
+        },
+        {
+          "lat": 40.7458116,
+          "lon": -73.9822419
+        },
+        {
+          "lat": 40.7467167,
+          "lon": -73.9815958
+        },
+        {
+          "lat": 40.7473822,
+          "lon": -73.9810195
+        },
+        {
+          "lat": 40.7498816,
+          "lon": -73.9791355
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-1",
+        "level": "-1",
+        "name": "IRT Lexington Avenue Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "3",
+        "railway:track_ref:signals": "MM1",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 817013581,
+      "bounds": {
+        "minlat": 40.7365982,
+        "minlon": -73.9890716,
+        "maxlat": 40.7496369,
+        "maxlon": -73.979608
+      },
+      "nodes": [
+        7630509782,
+        8427090424,
+        8427090428,
+        7630588804,
+        9147389622,
+        8427090531,
+        7630588805,
+        7630588806,
+        8427126930,
+        7630588807,
+        7630588808,
+        7630588801
+      ],
+      "geometry": [
+        {
+          "lat": 40.7496369,
+          "lon": -73.979608
+        },
+        {
+          "lat": 40.7474818,
+          "lon": -73.9812011
+        },
+        {
+          "lat": 40.7467487,
+          "lon": -73.9816757
+        },
+        {
+          "lat": 40.7455158,
+          "lon": -73.9825722
+        },
+        {
+          "lat": 40.7452855,
+          "lon": -73.9827522
+        },
+        {
+          "lat": 40.7439633,
+          "lon": -73.9836936
+        },
+        {
+          "lat": 40.7433646,
+          "lon": -73.9841305
+        },
+        {
+          "lat": 40.7427278,
+          "lon": -73.9845951
+        },
+        {
+          "lat": 40.7408499,
+          "lon": -73.9859652
+        },
+        {
+          "lat": 40.7402345,
+          "lon": -73.9864142
+        },
+        {
+          "lat": 40.7396185,
+          "lon": -73.9868638
+        },
+        {
+          "lat": 40.7365982,
+          "lon": -73.9890716
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-1",
+        "level": "-1",
+        "name": "IRT Lexington Avenue Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "1",
+        "railway:track_ref:signals": "MM4",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 817013583,
+      "bounds": {
+        "minlat": 40.7365815,
+        "minlon": -73.9890321,
+        "maxlat": 40.7501577,
+        "maxlon": -73.9791764
+      },
+      "nodes": [
+        7630588790,
+        7630588839,
+        8427090426,
+        8427090422,
+        7630588794,
+        9147389621,
+        7630588832,
+        7630588833,
+        7630588834,
+        7630588835,
+        7630588837
+      ],
+      "geometry": [
+        {
+          "lat": 40.7501577,
+          "lon": -73.9791764
+        },
+        {
+          "lat": 40.7496204,
+          "lon": -73.9795684
+        },
+        {
+          "lat": 40.7474625,
+          "lon": -73.9811659
+        },
+        {
+          "lat": 40.7467327,
+          "lon": -73.9816357
+        },
+        {
+          "lat": 40.7458288,
+          "lon": -73.9822809
+        },
+        {
+          "lat": 40.7452625,
+          "lon": -73.9827002
+        },
+        {
+          "lat": 40.7433481,
+          "lon": -73.984091
+        },
+        {
+          "lat": 40.7432857,
+          "lon": -73.9841365
+        },
+        {
+          "lat": 40.740218,
+          "lon": -73.9863747
+        },
+        {
+          "lat": 40.7397202,
+          "lon": -73.9867379
+        },
+        {
+          "lat": 40.7365815,
+          "lon": -73.9890321
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-1",
+        "level": "-1",
+        "name": "IRT Lexington Avenue Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "2",
+        "railway:track_ref:signals": "MM2",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 817018808,
+      "bounds": {
+        "minlat": 40.7163757,
+        "minlon": -74.002493,
+        "maxlat": 40.7326069,
+        "maxlon": -73.9901243
+      },
+      "nodes": [
+        7630649287,
+        7630587648,
+        7630587649,
+        7630587650,
+        7630587651,
+        7630587652,
+        7630587653,
+        7630587654,
+        8427216155,
+        8427216156,
+        7630587657,
+        7630587658,
+        8427246941,
+        8427246944,
+        7630587659,
+        7630587660,
+        7630587661,
+        7630587662,
+        7630587663,
+        7630587664,
+        8427197808,
+        8427197809,
+        7630587666,
+        7630587667,
+        8410583130,
+        7630587668,
+        7630587669,
+        7630587670
+      ],
+      "geometry": [
+        {
+          "lat": 40.7326069,
+          "lon": -73.9901243
+        },
+        {
+          "lat": 40.7309082,
+          "lon": -73.9905466
+        },
+        {
+          "lat": 40.7307634,
+          "lon": -73.9905981
+        },
+        {
+          "lat": 40.7306333,
+          "lon": -73.9906725
+        },
+        {
+          "lat": 40.7303456,
+          "lon": -73.990883
+        },
+        {
+          "lat": 40.7302318,
+          "lon": -73.990982
+        },
+        {
+          "lat": 40.7301351,
+          "lon": -73.9910998
+        },
+        {
+          "lat": 40.7299807,
+          "lon": -73.9913383
+        },
+        {
+          "lat": 40.7298595,
+          "lon": -73.9915189
+        },
+        {
+          "lat": 40.729727,
+          "lon": -73.991666
+        },
+        {
+          "lat": 40.7291666,
+          "lon": -73.9921453
+        },
+        {
+          "lat": 40.7272427,
+          "lon": -73.9937764
+        },
+        {
+          "lat": 40.7262134,
+          "lon": -73.9945351
+        },
+        {
+          "lat": 40.7259018,
+          "lon": -73.9947647
+        },
+        {
+          "lat": 40.7250693,
+          "lon": -73.995442
+        },
+        {
+          "lat": 40.7236061,
+          "lon": -73.9966322
+        },
+        {
+          "lat": 40.7234896,
+          "lon": -73.996713
+        },
+        {
+          "lat": 40.7233606,
+          "lon": -73.9967765
+        },
+        {
+          "lat": 40.7226304,
+          "lon": -73.9970711
+        },
+        {
+          "lat": 40.7224419,
+          "lon": -73.9971666
+        },
+        {
+          "lat": 40.7222699,
+          "lon": -73.9972796
+        },
+        {
+          "lat": 40.7215412,
+          "lon": -73.9978818
+        },
+        {
+          "lat": 40.7213987,
+          "lon": -73.998003
+        },
+        {
+          "lat": 40.7199697,
+          "lon": -73.9992188
+        },
+        {
+          "lat": 40.7193313,
+          "lon": -73.9998003
+        },
+        {
+          "lat": 40.7181794,
+          "lon": -74.0008496
+        },
+        {
+          "lat": 40.7178349,
+          "lon": -74.0011634
+        },
+        {
+          "lat": 40.7163757,
+          "lon": -74.002493
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-1",
+        "level": "-1",
+        "name": "IRT Lexington Avenue Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "1",
+        "railway:track_ref:signals": "MM4",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 817018810,
+      "bounds": {
+        "minlat": 40.7326008,
+        "minlon": -73.9900798,
+        "maxlat": 40.7365815,
+        "maxlon": -73.9890321
+      },
+      "nodes": [
+        7630588837,
+        7630588838,
+        4983147371,
+        4983147367,
+        4983147366,
+        4983147365,
+        4983147364,
+        4983147363,
+        4983147362,
+        4983147361,
+        8423379689,
+        8423379690,
+        4983147359,
+        4983147358,
+        4983147357,
+        4983147356,
+        4983147355,
+        4983147354,
+        4983147353,
+        4983147352,
+        4983147351,
+        7630649289,
+        7630633554
+      ],
+      "geometry": [
+        {
+          "lat": 40.7365815,
+          "lon": -73.9890321
+        },
+        {
+          "lat": 40.7361302,
+          "lon": -73.9893631
+        },
+        {
+          "lat": 40.7358835,
+          "lon": -73.9895439
+        },
+        {
+          "lat": 40.7354381,
+          "lon": -73.989871
+        },
+        {
+          "lat": 40.7353161,
+          "lon": -73.9899399
+        },
+        {
+          "lat": 40.7352131,
+          "lon": -73.9899758
+        },
+        {
+          "lat": 40.7350971,
+          "lon": -73.9900012
+        },
+        {
+          "lat": 40.7349814,
+          "lon": -73.9900147
+        },
+        {
+          "lat": 40.7348534,
+          "lon": -73.9900086
+        },
+        {
+          "lat": 40.7347261,
+          "lon": -73.9899964
+        },
+        {
+          "lat": 40.7346263,
+          "lon": -73.9899787
+        },
+        {
+          "lat": 40.7344027,
+          "lon": -73.9899435
+        },
+        {
+          "lat": 40.7343413,
+          "lon": -73.9899332
+        },
+        {
+          "lat": 40.7343109,
+          "lon": -73.9899281
+        },
+        {
+          "lat": 40.7341173,
+          "lon": -73.9898966
+        },
+        {
+          "lat": 40.7339651,
+          "lon": -73.9898896
+        },
+        {
+          "lat": 40.7338454,
+          "lon": -73.9898808
+        },
+        {
+          "lat": 40.7337131,
+          "lon": -73.989887
+        },
+        {
+          "lat": 40.7335294,
+          "lon": -73.9899018
+        },
+        {
+          "lat": 40.7333802,
+          "lon": -73.9899198
+        },
+        {
+          "lat": 40.7332518,
+          "lon": -73.9899401
+        },
+        {
+          "lat": 40.7329664,
+          "lon": -73.9899979
+        },
+        {
+          "lat": 40.7326008,
+          "lon": -73.9900798
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-2",
+        "level": "-2",
+        "maxspeed": "28 mph",
+        "name": "IRT Lexington Avenue Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "2",
+        "railway:track_ref:signals": "MM2",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 817018811,
+      "bounds": {
+        "minlat": 40.7163567,
+        "minlon": -74.0024554,
+        "maxlat": 40.7326008,
+        "maxlon": -73.9900798
+      },
+      "nodes": [
+        7630633554,
+        7630649290,
+        7630649291,
+        7630649292,
+        7630649293,
+        7630649294,
+        7630649295,
+        7630649296,
+        7630649297,
+        7630649298,
+        7630649299,
+        7630649300,
+        7630649301,
+        7630649302,
+        7630649303,
+        7630649304,
+        7630649305,
+        7630649306,
+        7630633530,
+        7630633531,
+        7630633532,
+        7630633533,
+        7630633534,
+        7630633535
+      ],
+      "geometry": [
+        {
+          "lat": 40.7326008,
+          "lon": -73.9900798
+        },
+        {
+          "lat": 40.7309006,
+          "lon": -73.9905026
+        },
+        {
+          "lat": 40.730752,
+          "lon": -73.9905554
+        },
+        {
+          "lat": 40.7306182,
+          "lon": -73.9906319
+        },
+        {
+          "lat": 40.7303278,
+          "lon": -73.9908443
+        },
+        {
+          "lat": 40.7302106,
+          "lon": -73.9909463
+        },
+        {
+          "lat": 40.7301104,
+          "lon": -73.9910684
+        },
+        {
+          "lat": 40.7299549,
+          "lon": -73.9913086
+        },
+        {
+          "lat": 40.7298351,
+          "lon": -73.9914871
+        },
+        {
+          "lat": 40.7297062,
+          "lon": -73.9916301
+        },
+        {
+          "lat": 40.729262,
+          "lon": -73.9920109
+        },
+        {
+          "lat": 40.7272251,
+          "lon": -73.9937377
+        },
+        {
+          "lat": 40.7258838,
+          "lon": -73.9947264
+        },
+        {
+          "lat": 40.7235891,
+          "lon": -73.9965929
+        },
+        {
+          "lat": 40.7234756,
+          "lon": -73.9966717
+        },
+        {
+          "lat": 40.7233496,
+          "lon": -73.9967337
+        },
+        {
+          "lat": 40.7226193,
+          "lon": -73.9970284
+        },
+        {
+          "lat": 40.7224282,
+          "lon": -73.9971252
+        },
+        {
+          "lat": 40.7222519,
+          "lon": -73.9972411
+        },
+        {
+          "lat": 40.7215206,
+          "lon": -73.9978455
+        },
+        {
+          "lat": 40.7199507,
+          "lon": -73.9991812
+        },
+        {
+          "lat": 40.7188056,
+          "lon": -74.0002244
+        },
+        {
+          "lat": 40.7178155,
+          "lon": -74.0011262
+        },
+        {
+          "lat": 40.7163567,
+          "lon": -74.0024554
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-1",
+        "level": "-1",
+        "name": "IRT Lexington Avenue Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "2",
+        "railway:track_ref:signals": "MM2",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 817018813,
+      "bounds": {
+        "minlat": 40.7325948,
+        "minlon": -73.9900354,
+        "maxlat": 40.7365649,
+        "maxlon": -73.9889927
+      },
+      "nodes": [
+        7630624208,
+        7630633556,
+        4983147350,
+        4983147349,
+        4983147348,
+        4983147347,
+        4983147346,
+        4983147345,
+        4983147344,
+        4983147343,
+        4983147342,
+        4983147341,
+        8423379681,
+        8423379682,
+        8423379683,
+        4983147337,
+        4983147336,
+        4983147335,
+        4983147334,
+        4983147333,
+        4983147330,
+        7630588843,
+        7630588842
+      ],
+      "geometry": [
+        {
+          "lat": 40.7325948,
+          "lon": -73.9900354
+        },
+        {
+          "lat": 40.732961,
+          "lon": -73.9899533
+        },
+        {
+          "lat": 40.7332467,
+          "lon": -73.9898955
+        },
+        {
+          "lat": 40.7334644,
+          "lon": -73.9898647
+        },
+        {
+          "lat": 40.7335709,
+          "lon": -73.9898515
+        },
+        {
+          "lat": 40.7336912,
+          "lon": -73.9898432
+        },
+        {
+          "lat": 40.7338729,
+          "lon": -73.989838
+        },
+        {
+          "lat": 40.7340238,
+          "lon": -73.9898441
+        },
+        {
+          "lat": 40.7340782,
+          "lon": -73.9898507
+        },
+        {
+          "lat": 40.7342221,
+          "lon": -73.9898695
+        },
+        {
+          "lat": 40.7343948,
+          "lon": -73.9898983
+        },
+        {
+          "lat": 40.7345009,
+          "lon": -73.9899145
+        },
+        {
+          "lat": 40.7346246,
+          "lon": -73.9899333
+        },
+        {
+          "lat": 40.7348141,
+          "lon": -73.9899606
+        },
+        {
+          "lat": 40.7348968,
+          "lon": -73.9899677
+        },
+        {
+          "lat": 40.7350056,
+          "lon": -73.9899679
+        },
+        {
+          "lat": 40.7351329,
+          "lon": -73.9899491
+        },
+        {
+          "lat": 40.7352207,
+          "lon": -73.989932
+        },
+        {
+          "lat": 40.7353021,
+          "lon": -73.9899023
+        },
+        {
+          "lat": 40.7354192,
+          "lon": -73.9898369
+        },
+        {
+          "lat": 40.7358668,
+          "lon": -73.9895044
+        },
+        {
+          "lat": 40.7361135,
+          "lon": -73.9893236
+        },
+        {
+          "lat": 40.7365649,
+          "lon": -73.9889927
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-2",
+        "level": "-2",
+        "name": "IRT Lexington Avenue Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "3",
+        "railway:track_ref:signals": "MM1",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 817018814,
+      "bounds": {
+        "minlat": 40.7163377,
+        "minlon": -74.0024179,
+        "maxlat": 40.7325948,
+        "maxlon": -73.9900354
+      },
+      "nodes": [
+        7630633579,
+        7630633578,
+        7630633577,
+        7630633576,
+        7630633575,
+        7630633574,
+        7630633573,
+        7630633572,
+        7630633571,
+        7630633570,
+        7630633569,
+        7630633568,
+        7630633567,
+        7630633566,
+        7630633565,
+        7630633564,
+        7630633563,
+        7630633562,
+        7630633561,
+        7630633560,
+        7630633559,
+        7630633558,
+        7630633557,
+        7630624208
+      ],
+      "geometry": [
+        {
+          "lat": 40.7163377,
+          "lon": -74.0024179
+        },
+        {
+          "lat": 40.7177961,
+          "lon": -74.0010891
+        },
+        {
+          "lat": 40.7187861,
+          "lon": -74.0001872
+        },
+        {
+          "lat": 40.7199317,
+          "lon": -73.9991437
+        },
+        {
+          "lat": 40.7215023,
+          "lon": -73.9978074
+        },
+        {
+          "lat": 40.7222351,
+          "lon": -73.9972016
+        },
+        {
+          "lat": 40.7224144,
+          "lon": -73.9970838
+        },
+        {
+          "lat": 40.7226081,
+          "lon": -73.9969857
+        },
+        {
+          "lat": 40.7233386,
+          "lon": -73.9966909
+        },
+        {
+          "lat": 40.7234616,
+          "lon": -73.9966304
+        },
+        {
+          "lat": 40.7235722,
+          "lon": -73.9965537
+        },
+        {
+          "lat": 40.7258665,
+          "lon": -73.9946874
+        },
+        {
+          "lat": 40.7272075,
+          "lon": -73.9936989
+        },
+        {
+          "lat": 40.7292434,
+          "lon": -73.991973
+        },
+        {
+          "lat": 40.7296858,
+          "lon": -73.9915937
+        },
+        {
+          "lat": 40.7298112,
+          "lon": -73.9914547
+        },
+        {
+          "lat": 40.7299291,
+          "lon": -73.991279
+        },
+        {
+          "lat": 40.7300857,
+          "lon": -73.9910371
+        },
+        {
+          "lat": 40.7301894,
+          "lon": -73.9909107
+        },
+        {
+          "lat": 40.7303101,
+          "lon": -73.9908057
+        },
+        {
+          "lat": 40.730603,
+          "lon": -73.9905913
+        },
+        {
+          "lat": 40.7307407,
+          "lon": -73.9905126
+        },
+        {
+          "lat": 40.730893,
+          "lon": -73.9904585
+        },
+        {
+          "lat": 40.7325948,
+          "lon": -73.9900354
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-1",
+        "level": "-1",
+        "name": "IRT Lexington Avenue Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "3",
+        "railway:track_ref:signals": "MM1",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 817415210,
+      "bounds": {
+        "minlat": 40.7330934,
+        "minlon": -73.9912129,
+        "maxlat": 40.7371428,
+        "maxlon": -73.9903546
+      },
+      "nodes": [
+        7657973047,
+        7633689315,
+        7633689316,
+        7633689317,
+        8423379695,
+        4983147855,
+        7633929071,
+        7633929072,
+        7633929084
+      ],
+      "geometry": [
+        {
+          "lat": 40.7371428,
+          "lon": -73.9903546
+        },
+        {
+          "lat": 40.7368434,
+          "lon": -73.9904312
+        },
+        {
+          "lat": 40.7367541,
+          "lon": -73.990454
+        },
+        {
+          "lat": 40.7366701,
+          "lon": -73.9904755
+        },
+        {
+          "lat": 40.7365492,
+          "lon": -73.9905057
+        },
+        {
+          "lat": 40.7349693,
+          "lon": -73.9908743
+        },
+        {
+          "lat": 40.7345346,
+          "lon": -73.9909205
+        },
+        {
+          "lat": 40.7340809,
+          "lon": -73.9910045
+        },
+        {
+          "lat": 40.7330934,
+          "lon": -73.9912129
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-2",
+        "level": "-2",
+        "name": "BMT Broadway Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "1",
+        "railway:track_ref:signals": "A1",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 817415211,
+      "bounds": {
+        "minlat": 40.7230681,
+        "minlon": -73.9988672,
+        "maxlat": 40.7330934,
+        "maxlon": -73.9912129
+      },
+      "nodes": [
+        7633929084,
+        7633929073,
+        7633929074,
+        7633929075,
+        7633929076,
+        8427355916,
+        7633929077,
+        7633929078,
+        7633929079,
+        7633929080,
+        8427386365,
+        7633929083,
+        7667567185
+      ],
+      "geometry": [
+        {
+          "lat": 40.7330934,
+          "lon": -73.9912129
+        },
+        {
+          "lat": 40.7319087,
+          "lon": -73.9914771
+        },
+        {
+          "lat": 40.7318081,
+          "lon": -73.9915061
+        },
+        {
+          "lat": 40.7317157,
+          "lon": -73.9915539
+        },
+        {
+          "lat": 40.7316266,
+          "lon": -73.9916229
+        },
+        {
+          "lat": 40.7310658,
+          "lon": -73.9920973
+        },
+        {
+          "lat": 40.73046,
+          "lon": -73.9926098
+        },
+        {
+          "lat": 40.7296659,
+          "lon": -73.9932799
+        },
+        {
+          "lat": 40.7287856,
+          "lon": -73.9940273
+        },
+        {
+          "lat": 40.7272852,
+          "lon": -73.9952975
+        },
+        {
+          "lat": 40.7251137,
+          "lon": -73.9971356
+        },
+        {
+          "lat": 40.7237133,
+          "lon": -73.9983193
+        },
+        {
+          "lat": 40.7230681,
+          "lon": -73.9988672
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-1",
+        "level": "-1",
+        "name": "BMT Broadway Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "1",
+        "railway:track_ref:signals": "A1",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 817415213,
+      "bounds": {
+        "minlat": 40.7330879,
+        "minlon": -73.9911684,
+        "maxlat": 40.7371167,
+        "maxlon": -73.990293
+      },
+      "nodes": [
+        7657973048,
+        7633689368,
+        7633689369,
+        7633689370,
+        8423379694,
+        7656750823,
+        7633938987,
+        7633938988,
+        7633939000
+      ],
+      "geometry": [
+        {
+          "lat": 40.7371167,
+          "lon": -73.990293
+        },
+        {
+          "lat": 40.736833,
+          "lon": -73.9903449
+        },
+        {
+          "lat": 40.7367473,
+          "lon": -73.9903606
+        },
+        {
+          "lat": 40.7366506,
+          "lon": -73.9903783
+        },
+        {
+          "lat": 40.736542,
+          "lon": -73.9903994
+        },
+        {
+          "lat": 40.7349462,
+          "lon": -73.9907643
+        },
+        {
+          "lat": 40.7345213,
+          "lon": -73.9908626
+        },
+        {
+          "lat": 40.7340751,
+          "lon": -73.99096
+        },
+        {
+          "lat": 40.7330879,
+          "lon": -73.9911684
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-2",
+        "level": "-2",
+        "name": "BMT Broadway Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "3",
+        "railway:track_ref:signals": "A3",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 817415214,
+      "bounds": {
+        "minlat": 40.7230495,
+        "minlon": -73.9988293,
+        "maxlat": 40.7330879,
+        "maxlon": -73.9911684
+      },
+      "nodes": [
+        7633939000,
+        7633938989,
+        7633938990,
+        7633938991,
+        7633938992,
+        7633938993,
+        7633938994,
+        7633938995,
+        7633938996,
+        7633938997,
+        7633938998,
+        7633938999,
+        7667533979
+      ],
+      "geometry": [
+        {
+          "lat": 40.7330879,
+          "lon": -73.9911684
+        },
+        {
+          "lat": 40.7319022,
+          "lon": -73.9914327
+        },
+        {
+          "lat": 40.7317981,
+          "lon": -73.9914628
+        },
+        {
+          "lat": 40.7317007,
+          "lon": -73.9915131
+        },
+        {
+          "lat": 40.7316087,
+          "lon": -73.9915844
+        },
+        {
+          "lat": 40.7304416,
+          "lon": -73.9925718
+        },
+        {
+          "lat": 40.7301625,
+          "lon": -73.992808
+        },
+        {
+          "lat": 40.7287671,
+          "lon": -73.9939893
+        },
+        {
+          "lat": 40.7272667,
+          "lon": -73.9952595
+        },
+        {
+          "lat": 40.7247712,
+          "lon": -73.9973719
+        },
+        {
+          "lat": 40.7243732,
+          "lon": -73.9977088
+        },
+        {
+          "lat": 40.7243149,
+          "lon": -73.9977582
+        },
+        {
+          "lat": 40.7230495,
+          "lon": -73.9988293
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-1",
+        "level": "-1",
+        "name": "BMT Broadway Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "3",
+        "railway:track_ref:signals": "A3",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 817415224,
+      "bounds": {
+        "minlat": 40.7230122,
+        "minlon": -73.9987535,
+        "maxlat": 40.7330774,
+        "maxlon": -73.9910855
+      },
+      "nodes": [
+        7667567186,
+        8427386367,
+        7633939011,
+        7633939010,
+        7633939009,
+        8427395221,
+        7633939008,
+        7633939007,
+        7633939006,
+        7633939005,
+        7633939004,
+        7633939003,
+        9098776369
+      ],
+      "geometry": [
+        {
+          "lat": 40.7230122,
+          "lon": -73.9987535
+        },
+        {
+          "lat": 40.7236596,
+          "lon": -73.9982055
+        },
+        {
+          "lat": 40.7250595,
+          "lon": -73.9970206
+        },
+        {
+          "lat": 40.7272297,
+          "lon": -73.9951834
+        },
+        {
+          "lat": 40.7287301,
+          "lon": -73.9939133
+        },
+        {
+          "lat": 40.7296128,
+          "lon": -73.9931661
+        },
+        {
+          "lat": 40.7301256,
+          "lon": -73.992732
+        },
+        {
+          "lat": 40.7310126,
+          "lon": -73.9919797
+        },
+        {
+          "lat": 40.7315729,
+          "lon": -73.9915074
+        },
+        {
+          "lat": 40.7316707,
+          "lon": -73.9914316
+        },
+        {
+          "lat": 40.7317782,
+          "lon": -73.9913761
+        },
+        {
+          "lat": 40.7318891,
+          "lon": -73.991344
+        },
+        {
+          "lat": 40.7330774,
+          "lon": -73.9910855
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-1",
+        "level": "-1",
+        "name": "BMT Broadway Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "2",
+        "railway:track_ref:signals": "A2",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 817415225,
+      "bounds": {
+        "minlat": 40.7330774,
+        "minlon": -73.9910855,
+        "maxlat": 40.7370739,
+        "maxlon": -73.9901922
+      },
+      "nodes": [
+        9098776369,
+        7633939015,
+        7633939014,
+        4983147858,
+        7656750825,
+        7633705516,
+        7633705515,
+        7633705514,
+        7657973050
+      ],
+      "geometry": [
+        {
+          "lat": 40.7330774,
+          "lon": -73.9910855
+        },
+        {
+          "lat": 40.7340636,
+          "lon": -73.9908709
+        },
+        {
+          "lat": 40.7345162,
+          "lon": -73.990743
+        },
+        {
+          "lat": 40.7349357,
+          "lon": -73.9906222
+        },
+        {
+          "lat": 40.7365298,
+          "lon": -73.9902661
+        },
+        {
+          "lat": 40.7366253,
+          "lon": -73.9902511
+        },
+        {
+          "lat": 40.7367373,
+          "lon": -73.9902364
+        },
+        {
+          "lat": 40.7368358,
+          "lon": -73.9902234
+        },
+        {
+          "lat": 40.7370739,
+          "lon": -73.9901922
+        }
+      ],
+      "tags": {
+        "electrified": "rail",
+        "frequency": "0",
+        "gauge": "1435",
+        "layer": "-2",
+        "level": "-2",
+        "name": "BMT Broadway Line",
+        "operator": "New York City Transit Authority",
+        "railway": "subway",
+        "railway:preferred_direction": "forward",
+        "railway:track_ref": "2",
+        "railway:track_ref:signals": "A2",
+        "tunnel": "yes",
+        "voltage": "625"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1112132886,
+      "bounds": {
+        "minlat": 40.7352441,
+        "minlon": -73.9908642,
+        "maxlat": 40.7352539,
+        "maxlon": -73.9908517
+      },
+      "nodes": [
+        10174524204,
+        10174524205
+      ],
+      "geometry": [
+        {
+          "lat": 40.7352539,
+          "lon": -73.9908517
+        },
+        {
+          "lat": 40.7352441,
+          "lon": -73.9908642
+        }
+      ],
+      "tags": {
+        "handrail": "no",
+        "highway": "steps",
+        "incline": "down",
+        "ramp": "yes",
+        "ramp:wheelchair": "yes",
+        "step_count": "4",
+        "surface": "rock"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1112132888,
+      "bounds": {
+        "minlat": 40.7351371,
+        "minlon": -73.9909993,
+        "maxlat": 40.7351493,
+        "maxlon": -73.990984
+      },
+      "nodes": [
+        10174524206,
+        10174524208
+      ],
+      "geometry": [
+        {
+          "lat": 40.7351493,
+          "lon": -73.990984
+        },
+        {
+          "lat": 40.7351371,
+          "lon": -73.9909993
+        }
+      ],
+      "tags": {
+        "handrail": "no",
+        "highway": "steps",
+        "incline": "down",
+        "ramp": "yes",
+        "ramp:wheelchair": "yes",
+        "step_count": "4",
+        "surface": "rock"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1112132891,
+      "bounds": {
+        "minlat": 40.7351928,
+        "minlon": -73.9907004,
+        "maxlat": 40.7352041,
+        "maxlon": -73.9906996
+      },
+      "nodes": [
+        10174524211,
+        10174524212
+      ],
+      "geometry": [
+        {
+          "lat": 40.7352041,
+          "lon": -73.9907004
+        },
+        {
+          "lat": 40.7351928,
+          "lon": -73.9906996
+        }
+      ],
+      "tags": {
+        "handrail": "no",
+        "highway": "steps",
+        "incline": "down",
+        "ramp": "yes",
+        "ramp:wheelchair": "yes",
+        "step_count": "4",
+        "surface": "rock"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1112132893,
+      "bounds": {
+        "minlat": 40.7350625,
+        "minlon": -73.9906914,
+        "maxlat": 40.7350762,
+        "maxlon": -73.9906904
+      },
+      "nodes": [
+        10174524213,
+        10174524214
+      ],
+      "geometry": [
+        {
+          "lat": 40.7350762,
+          "lon": -73.9906914
+        },
+        {
+          "lat": 40.7350625,
+          "lon": -73.9906904
+        }
+      ],
+      "tags": {
+        "handrail": "no",
+        "highway": "steps",
+        "incline": "down",
+        "ramp": "yes",
+        "ramp:wheelchair": "yes",
+        "step_count": "4",
+        "surface": "rock"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1112132906,
+      "bounds": {
+        "minlat": 40.7357568,
+        "minlon": -73.9909017,
+        "maxlat": 40.7357641,
+        "maxlon": -73.9908832
+      },
+      "nodes": [
+        10174524071,
+        10174524305
+      ],
+      "geometry": [
+        {
+          "lat": 40.7357641,
+          "lon": -73.9909017
+        },
+        {
+          "lat": 40.7357568,
+          "lon": -73.9908832
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "lit": "yes",
+        "surface": "paving_stones"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1112132908,
+      "bounds": {
+        "minlat": 40.7357418,
+        "minlon": -73.9908586,
+        "maxlat": 40.7357468,
+        "maxlon": -73.9908464
+      },
+      "nodes": [
+        10174524306,
+        10174524307
+      ],
+      "geometry": [
+        {
+          "lat": 40.7357468,
+          "lon": -73.9908586
+        },
+        {
+          "lat": 40.7357418,
+          "lon": -73.9908464
+        }
+      ],
+      "tags": {
+        "highway": "steps",
+        "lit": "yes",
+        "surface": "paving_stones"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1112132922,
+      "bounds": {
+        "minlat": 40.736321,
+        "minlon": -73.9906256,
+        "maxlat": 40.7363603,
+        "maxlon": -73.9905931
+      },
+      "nodes": [
+        2611395794,
+        10174524528
+      ],
+      "geometry": [
+        {
+          "lat": 40.7363603,
+          "lon": -73.9905931
+        },
+        {
+          "lat": 40.736321,
+          "lon": -73.9906256
+        }
+      ],
+      "tags": {
+        "handrail": "yes",
+        "highway": "steps",
+        "ramp": "no",
+        "tactile_paving": "no"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1112132937,
+      "bounds": {
+        "minlat": 40.7354662,
+        "minlon": -73.9902159,
+        "maxlat": 40.7354748,
+        "maxlon": -73.9901953
+      },
+      "nodes": [
+        10174524700,
+        10174524701
+      ],
+      "geometry": [
+        {
+          "lat": 40.7354748,
+          "lon": -73.9902159
+        },
+        {
+          "lat": 40.7354662,
+          "lon": -73.9901953
+        }
+      ],
+      "tags": {
+        "handrail": "yes",
+        "highway": "steps",
+        "lit": "yes",
+        "surface": "paving_stones"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1112132939,
+      "bounds": {
+        "minlat": 40.7354473,
+        "minlon": -73.9901695,
+        "maxlat": 40.7354554,
+        "maxlon": -73.9901503
+      },
+      "nodes": [
+        10174524702,
+        10174524703
+      ],
+      "geometry": [
+        {
+          "lat": 40.7354554,
+          "lon": -73.9901695
+        },
+        {
+          "lat": 40.7354473,
+          "lon": -73.9901503
+        }
+      ],
+      "tags": {
+        "handrail": "yes",
+        "highway": "steps",
+        "lit": "yes",
+        "surface": "paving_stones"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1112170133,
+      "bounds": {
+        "minlat": 40.7363811,
+        "minlon": -73.9899664,
+        "maxlat": 40.7364067,
+        "maxlon": -73.9899474
+      },
+      "nodes": [
+        10174832541,
+        10174832542
+      ],
+      "geometry": [
+        {
+          "lat": 40.7364067,
+          "lon": -73.9899474
+        },
+        {
+          "lat": 40.7363811,
+          "lon": -73.9899664
+        }
+      ],
+      "tags": {
+        "highway": "steps"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1112170136,
+      "bounds": {
+        "minlat": 40.7362942,
+        "minlon": -73.9900309,
+        "maxlat": 40.7363248,
+        "maxlon": -73.9900082
+      },
+      "nodes": [
+        3670749329,
+        10174832480
+      ],
+      "geometry": [
+        {
+          "lat": 40.7363248,
+          "lon": -73.9900082
+        },
+        {
+          "lat": 40.7362942,
+          "lon": -73.9900309
+        }
+      ],
+      "tags": {
+        "highway": "steps"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1112170143,
+      "bounds": {
+        "minlat": 40.7365078,
+        "minlon": -73.9904669,
+        "maxlat": 40.7365496,
+        "maxlon": -73.9904302
+      },
+      "nodes": [
+        2611395793,
+        10174832601
+      ],
+      "geometry": [
+        {
+          "lat": 40.7365078,
+          "lon": -73.9904669
+        },
+        {
+          "lat": 40.7365496,
+          "lon": -73.9904302
+        }
+      ],
+      "tags": {
+        "handrail": "yes",
+        "highway": "steps"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436607322,
+      "bounds": {
+        "minlat": 40.7351991,
+        "minlon": -73.9922544,
+        "maxlat": 40.7353701,
+        "maxlon": -73.9918802
+      },
+      "nodes": [
+        13204170845,
+        13204170846,
+        13204170847,
+        13204170844,
+        13204170845
+      ],
+      "geometry": [
+        {
+          "lat": 40.7353701,
+          "lon": -73.9922396
+        },
+        {
+          "lat": 40.7353515,
+          "lon": -73.9922544
+        },
+        {
+          "lat": 40.7351991,
+          "lon": -73.9918946
+        },
+        {
+          "lat": 40.7352195,
+          "lon": -73.9918802
+        },
+        {
+          "lat": 40.7353701,
+          "lon": -73.9922396
+        }
+      ],
+      "tags": {
+        "bus": "yes",
+        "operator": "MTA NYCT",
+        "public_transport": "platform"
+      }
+    },
+    {
+      "type": "way",
+      "id": 1436607323,
+      "bounds": {
+        "minlat": 40.7340786,
+        "minlon": -73.9894162,
+        "maxlat": 40.7343116,
+        "maxlon": -73.9888973
+      },
+      "nodes": [
+        13204170842,
+        13204170841,
+        13204170840,
+        13204170843,
+        13204170842
+      ],
+      "geometry": [
+        {
+          "lat": 40.7341024,
+          "lon": -73.9888973
+        },
+        {
+          "lat": 40.7340786,
+          "lon": -73.9889147
+        },
+        {
+          "lat": 40.7342862,
+          "lon": -73.9894162
+        },
+        {
+          "lat": 40.7343116,
+          "lon": -73.9893982
+        },
+        {
+          "lat": 40.7341024,
+          "lon": -73.9888973
+        }
+      ],
+      "tags": {
+        "bus": "yes",
+        "public_transport": "platform"
+      }
+    }
+  ]
+}
