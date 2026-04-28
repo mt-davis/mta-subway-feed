@@ -7,6 +7,9 @@ import Link from "next/link";
 import type { StationModel } from "@/lib/station3d/types";
 import { Ground } from "@/components/station3d/Ground";
 import { PlatformSlabs } from "@/components/station3d/PlatformSlabs";
+import { Tracks } from "@/components/station3d/Tracks";
+import { Stairs } from "@/components/station3d/Stairs";
+import { Entrances } from "@/components/station3d/Entrances";
 
 export default function StationScene({ model }: { model: StationModel }) {
   return (
@@ -35,7 +38,7 @@ export default function StationScene({ model }: { model: StationModel }) {
       </div>
 
       <Canvas
-        camera={{ position: [40, 25, 40], fov: 50, near: 0.1, far: 1000 }}
+        camera={{ position: [55, 45, 55], fov: 50, near: 0.1, far: 1000 }}
         shadows
       >
         <color attach="background" args={["#0f172a"]} />
@@ -54,7 +57,10 @@ export default function StationScene({ model }: { model: StationModel }) {
         />
 
         <Ground />
+        <Tracks tracks={model.tracks} origin={model.center} />
         <PlatformSlabs platforms={model.platforms} origin={model.center} />
+        <Stairs stairs={model.stairs} origin={model.center} />
+        <Entrances entrances={model.entrances} origin={model.center} />
 
         <OrbitControls
           makeDefault
