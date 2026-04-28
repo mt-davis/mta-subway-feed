@@ -1,7 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
-import { useState, useSyncExternalStore } from 'react';
+import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import type { TrainPosition } from '@/lib/types';
 import RouteFilter from './RouteFilter';
 import StatsPanel from './StatsPanel';
@@ -30,7 +30,67 @@ export default function SubwayMap() {
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(true);
 
+  // Show an "Updating map…" pill while the cluster layer is busy reconciling
+  // a filter change. Even with batched addLayers, swapping ~500 markers in/out
+  // of the cluster index spends a few hundred ms on the main thread; without
+  // feedback the user reads it as "the button didn't work".
+  //
+  // Detection is timer-based, not callback-based: the actual marker work
+  // happens inside `AnimatedTrainLayer`'s effect (a child of MapComponent),
+  // and plumbing a "done" callback up through the dynamic boundary is more
+  // wiring than this UX is worth. Two rAFs put us past the next paint, then
+  // an 800ms tail covers chunkedLoading + the deferred-trajectory backfill.
+  // 800ms is also above the Doherty perceptual threshold (~400ms) for
+  // "deliberate feedback that the system heard you" — anything shorter
+  // reads as a flicker on fast monitors.
+  const [isUpdatingFilter, setIsUpdatingFilter] = useState(false);
+  const filterPillTimerRef = useRef<number | null>(null);
+  const filterPillRafRef = useRef<number | null>(null);
+
+  // Cancel any pending pill timers on unmount so we don't setState after unmount.
+  useEffect(() => {
+    return () => {
+      if (filterPillTimerRef.current !== null) {
+        window.clearTimeout(filterPillTimerRef.current);
+      }
+      if (filterPillRafRef.current !== null) {
+        window.cancelAnimationFrame(filterPillRafRef.current);
+      }
+    };
+  }, []);
+
+  function showFilterPill() {
+    setIsUpdatingFilter(true);
+
+    // Reset any in-flight cleanup so rapid clicks extend the pill duration
+    // instead of hiding it mid-update.
+    if (filterPillTimerRef.current !== null) {
+      window.clearTimeout(filterPillTimerRef.current);
+      filterPillTimerRef.current = null;
+    }
+    if (filterPillRafRef.current !== null) {
+      window.cancelAnimationFrame(filterPillRafRef.current);
+      filterPillRafRef.current = null;
+    }
+
+    // Two rAFs ⇒ React has rendered AND the browser has painted.
+    // setTimeout 800 ⇒ chunkedLoading + deferred-trajectory backfill is
+    // done for typical bulk diffs. Total visible duration is ~one paint +
+    // 800ms — long enough to register as feedback, short enough to clear
+    // before the user thinks it's stuck.
+    filterPillRafRef.current = window.requestAnimationFrame(() => {
+      filterPillRafRef.current = window.requestAnimationFrame(() => {
+        filterPillRafRef.current = null;
+        filterPillTimerRef.current = window.setTimeout(() => {
+          filterPillTimerRef.current = null;
+          setIsUpdatingFilter(false);
+        }, 800);
+      });
+    });
+  }
+
   function toggleRoute(routes: string[]) {
+    showFilterPill();
     setSelectedRoutes((prev) => {
       const next = new Set(prev);
       const allSelected = routes.every((r) => next.has(r));
@@ -44,6 +104,7 @@ export default function SubwayMap() {
   }
 
   function clearRoutes() {
+    showFilterPill();
     setSelectedRoutes(new Set());
   }
 
@@ -76,6 +137,17 @@ export default function SubwayMap() {
         lastUpdated={lastUpdated}
       />
 
+      {/* Filter-update feedback. Two complementary indicators:
+          1. A thin indeterminate progress bar pinned right under the header
+             — the universal "system is working" pattern (GitHub, Stripe, etc.)
+             that can never be occluded by map markers.
+          2. A centered "Updating map…" pill that names what's happening.
+          Both share the same visibility window (`isUpdatingFilter`).
+          Pointer-events:none so neither blocks pan/zoom on the map.
+          aria-live="polite" so screen readers announce without interrupting. */}
+      <UpdatingProgressBar visible={isUpdatingFilter} />
+      <UpdatingPill visible={isUpdatingFilter} />
+
       {/* Desktop: left rail — filter + legend share a single column so they
           never overlap on short viewports. The filter list scrolls if the
           remaining height is tight; the legend stays pinned at the bottom of
@@ -83,7 +155,7 @@ export default function SubwayMap() {
       <div
         className="hidden sm:flex absolute top-14 bottom-3 left-3 z-[1000] w-44 flex-col gap-2 pointer-events-none"
       >
-        <div className="min-h-0 overflow-y-auto pointer-events-auto pr-0.5">
+        <div className="min-h-0 flex-1 overflow-y-auto pointer-events-auto pr-0.5">
           <RouteFilter
             trains={trains}
             selectedRoutes={selectedRoutes}
@@ -91,7 +163,7 @@ export default function SubwayMap() {
             onClear={clearRoutes}
           />
         </div>
-        <div className="pointer-events-auto mt-auto">
+        <div className="pointer-events-auto shrink-0">
           <Legend />
         </div>
       </div>
@@ -151,6 +223,84 @@ function getServerNow(): number {
   // which would render as "—" in any case because lastUpdated is null on the
   // server.
   return 0;
+}
+
+// ── Indeterminate progress bar ──────────────────────────────────────────────
+// Thin (2px) animated bar pinned to the top of the viewport, just under the
+// header. This is the most universally recognized "system is working"
+// pattern — used by GitHub, Stripe, Notion, every browser. Critically, it's
+// pinned to the viewport edge so it can never be occluded by Leaflet markers
+// the way a centered pill can.
+//
+// Mount/unmount on `visible` so the bar's slide animation replays each time.
+// Animation is pure CSS (`@keyframes progress-slide`) so it survives React
+// StrictMode mount/unmount/remount cycles in dev.
+function UpdatingProgressBar({ visible }: { visible: boolean }) {
+  if (!visible) return null;
+  return (
+    <div
+      aria-hidden="true"
+      className="absolute left-0 right-0 z-[1100] h-[3px] overflow-hidden pointer-events-none"
+      style={{ top: '52px' }}
+    >
+      {/* Faint always-on track so the bar is perceptible even when the
+          sliding highlight is off-screen between sweeps. */}
+      <div className="absolute inset-0 bg-blue-500/30" />
+      {/* Sliding highlight — animates from off-screen left to off-screen right
+          on a 1.1s loop. The 200% width amplifies the gradient so the bright
+          peak feels more pronounced. */}
+      <div className="absolute inset-0 animate-progress-slide bg-gradient-to-r from-transparent via-blue-400 to-transparent" />
+    </div>
+  );
+}
+
+// ── "Updating map…" pill ────────────────────────────────────────────────────
+// Centered just below the header during filter changes. Larger and more
+// prominent than the typical loading toast — the previous 11px version was
+// being eaten by cluster icons rendering on top of it. Now uses:
+//   • a left-side colored bar in brand blue for instant pattern recognition
+//   • backdrop-blur with high opacity so map content behind reads as bg, not
+//     compete-for-attention foreground
+//   • shadow-2xl + ring for a clear "floating panel" depth cue
+//
+// We mount/unmount instead of toggling opacity so React doesn't keep an idle
+// node in the DOM, and so the entrance animation replays each time the user
+// taps a filter chip.
+//
+// `pointer-events-none` is critical: this element sits over the map at z=1100,
+// and we don't want it to swallow pan/zoom gestures the moment it appears.
+// Entry animation lives in globals.css as `@keyframes pill-in`. We deliberately
+// avoid the useState+rAF "shown" pattern that's common for these — it gets
+// cancelled by React StrictMode's mount/unmount/remount cycle, leaving the pill
+// permanently invisible at opacity:0. A pure CSS animation runs on mount no
+// matter how many times the component mounts.
+function UpdatingPill({ visible }: { visible: boolean }) {
+  if (!visible) return null;
+  return (
+    <div
+      role="status"
+      aria-live="polite"
+      className="absolute z-[1100] pointer-events-none animate-pill-in"
+      style={{ top: '68px', left: '50%', transform: 'translateX(-50%)' }}
+    >
+      <div className="flex items-center gap-2.5 pl-3 pr-4 py-2 rounded-xl bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border border-blue-500/30 shadow-2xl ring-1 ring-blue-500/10">
+        {/* Brand-blue accent bar on the left so the pill reads as "system
+            activity" the moment it pops in, even before the user parses the
+            text. */}
+        <span
+          aria-hidden="true"
+          className="w-0.5 h-4 rounded-full bg-blue-500"
+        />
+        <span
+          aria-hidden="true"
+          className="w-3.5 h-3.5 rounded-full border-2 border-blue-500 border-t-transparent animate-spin"
+        />
+        <span className="text-[12px] font-semibold text-gray-800 dark:text-gray-100 tracking-wide whitespace-nowrap">
+          Updating map…
+        </span>
+      </div>
+    </div>
+  );
 }
 
 // ── Header ──────────────────────────────────────────────────────────────────
@@ -222,13 +372,15 @@ function Header({
       <div className="flex items-center gap-2 sm:gap-3 text-xs text-gray-600 dark:text-gray-400 shrink-0">
         <div className="flex items-center gap-1.5">
           <span
-            className={`w-2 h-2 rounded-full ${
-              error
-                ? 'bg-red-500'
+            className="w-2 h-2 rounded-full"
+            style={{
+              backgroundColor: error
+                ? 'var(--error)'
                 : isFresh
-                ? 'bg-green-500 animate-pulse'
-                : 'bg-amber-500'
-            }`}
+                ? 'var(--fresh)'
+                : 'var(--stale)',
+              animation: !error && isFresh ? 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite' : undefined,
+            }}
             aria-hidden="true"
           />
           <span className="tabular-nums" aria-live="polite">

@@ -5,13 +5,48 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
+  /* Neutrals — Light */
   --background: #ffffff;
   --foreground: #0b1220;
+  --surface: #f9fafb;
+  --surface-elevated: #ffffff;
+  --border: rgba(15, 23, 42, 0.08);
+  --text: #0b1220;
+  --text-muted: #6b7280;
+  --text-subtle: #9ca3af;
+
+  /* Semantic */
+  --fresh: #22c55e;
+  --stale: #f59e0b;
+  --error: #ef4444;
+
+  /* Spacing (4px base) */
+  --sp-2xs: 2px;
+  --sp-xs: 4px;
+  --sp-sm: 8px;
+  --sp-md: 12px;
+  --sp-lg: 16px;
+  --sp-xl: 24px;
+  --sp-2xl: 32px;
+  --sp-3xl: 48px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
 }
 
 .dark {
+  /* Neutrals — Dark */
   --background: #030712;
   --foreground: #f9fafb;
+  --surface: #111827;
+  --surface-elevated: #1f2937;
+  --border: rgba(255, 255, 255, 0.08);
+  --text: #f9fafb;
+  --text-muted: #9ca3af;
+  --text-subtle: #6b7280;
 }
 
 body {
@@ -38,7 +73,7 @@ body {
   justify-content: center;
   font-weight: 700;
   font-size: 11px;
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
   border: 2px solid rgba(255, 255, 255, 0.95);
   /* Stacked rings: white border (above) + dark outer ring keeps light-colored
      markers (L #A7A9AC, S #808183, N/Q/R/W #FCCC0A) visible on light street
@@ -122,6 +157,34 @@ body {
   to   { transform: rotate(360deg); }
 }
 
+/* ── "Updating map…" pill: slide-down + fade-in on mount ─────────
+   The pill is centered with translateX(-50%); the keyframe must
+   preserve that and only animate the Y offset and opacity. Pure CSS
+   so it survives React StrictMode mount/unmount/remount cycles. */
+@keyframes pill-in {
+  from { opacity: 0; transform: translateX(-50%) translateY(-6px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0);    }
+}
+.animate-pill-in {
+  animation: pill-in 180ms ease-out both;
+}
+
+/* ── Indeterminate progress bar ──────────────────────────────────
+   A 30%-wide highlight slides left-to-right across a faint track,
+   loops continuously while visible. Same pattern as YouTube's
+   navigation bar / GitHub's page-load indicator — universally
+   recognized as "system is working". The translateX values are -100%
+   → 100% (instead of 0% → 100%) so the bar enters and exits the
+   viewport rather than appearing/disappearing in place. */
+@keyframes progress-slide {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(200%);  }
+}
+.animate-progress-slide {
+  animation: progress-slide 1100ms ease-in-out infinite;
+  width: 33%;
+}
+
 .train-moving::before {
   content: '';
   position: absolute;
@@ -184,7 +247,7 @@ body {
 }
 
 .train-cluster-count {
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
   font-weight: 700;
   color: #f9fafb;
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.6);
@@ -276,7 +339,7 @@ body {
 
 /* ── Train popup (custom layout inside Leaflet popup) ───────────── */
 .train-popup {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
   padding: 14px 16px 12px;
   width: 220px;
 }
@@ -300,7 +363,7 @@ body {
   font-size: 14px;
   flex-shrink: 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
-  font-family: system-ui, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
 
 .train-popup-title { min-width: 0; flex: 1; }

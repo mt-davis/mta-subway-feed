@@ -57,7 +57,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: themeBootstrap }}
         />
       </head>
-      <body className="h-full bg-white dark:bg-gray-950">{children}</body>
+      <body className="h-full bg-white dark:bg-gray-950" suppressHydrationWarning>{children}</body>
     </html>
   );
 }

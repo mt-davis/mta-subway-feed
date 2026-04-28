@@ -48,7 +48,7 @@ export default function MobileSheet({
       )}
 
       <div
-        className={`fixed inset-x-0 bottom-0 z-[1100] transition-transform duration-300 ease-out ${
+        className={`fixed inset-x-0 bottom-0 z-[1100] transition-transform duration-200 ease-out ${
           open ? 'translate-y-0' : 'translate-y-[calc(100%-3.75rem)]'
         }`}
         role="dialog"

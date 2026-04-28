@@ -710,6 +710,19 @@ function AnimatedTrainLayer({
   //   • We also stick with the previously chosen polyline so the new slice
   //     stays on the same shape variant — prevents flipping between parallel
   //     express/local geometries.
+  //
+  // ── Batching note (the "5-second clear" fix) ────────────────────────────
+  // Adds and removes go through `addLayers()` / `removeLayers()` (plural),
+  // **never** the singular variants. Why this matters:
+  //
+  //   • markercluster rebuilds its spatial index on every `addLayer()` call.
+  //     When the user goes Filter → Clear, ~500 new markers are added at once;
+  //     calling `addLayer` per marker meant 500 spatial-index rebuilds in a
+  //     tight loop and the UI froze for ~5 seconds.
+  //   • `addLayers([...])` rebuilds the index once and (with our existing
+  //     `chunkedLoading: true` config) splits the DOM work into idle chunks.
+  //   • `chunkedLoading` ONLY applies to `addLayers`, not `addLayer`. Until
+  //     this fix, the chunked-loading config was effectively dead code.
   useEffect(() => {
     const incoming = new Map(trains.map((t) => [t.id, t]));
     const nowSec = Date.now() / 1000;
@@ -717,17 +730,44 @@ function AnimatedTrainLayer({
     const group = clusterGroup.current;
     if (!group) return;
 
-    // Remove trains that disappeared from the feed.
-    // When the marker is currently clustered, it has no DOM element so the
-    // exit animation is skipped — the cluster icon will simply update its
-    // count on the next pass, which already looks fine.
+    // ── Pass 1: collect removals ────────────────────────────────────────
+    // Modifying a Map during iteration can skip entries, so we collect IDs
+    // first and mutate after.
+    const toRemoveIds: string[] = [];
+    const toRemoveMarkers: L.Marker[] = [];
     for (const [id, entry] of entries.current) {
-      if (incoming.has(id)) continue;
-      const el = entry.marker.getElement();
-      if (el) animateExit(el, () => group.removeLayer(entry.marker));
-      else group.removeLayer(entry.marker);
-      entries.current.delete(id);
+      if (!incoming.has(id)) {
+        toRemoveIds.push(id);
+        toRemoveMarkers.push(entry.marker);
+      }
     }
+    if (toRemoveMarkers.length > 0) {
+      // One spatial-index rebuild instead of N.
+      group.removeLayers(toRemoveMarkers);
+      for (const id of toRemoveIds) entries.current.delete(id);
+    }
+
+    // ── Pass 2: walk incoming, batch new markers, update existing ones ──
+    const newMarkers: L.Marker[] = [];
+    // Spawned movers whose trajectory we deferred (see comment below).
+    // We process them on the next idle frame so the user gets an immediate
+    // map and the geospatial work doesn't block the click.
+    const pendingTrajectories: Array<{
+      entry: TrainEntry;
+      target: [number, number];
+      routeId: string;
+      startTime: number;
+      endTime: number;
+    }> = [];
+
+    // Heuristic: when many trains spawn at once (typically Clear after a
+    // filter, ~500 movers), defer the per-train turf work to idle time.
+    // For small diffs (steady-state refresh) keep the synchronous path so
+    // entrance animations look natural.
+    const BULK_SPAWN_THRESHOLD = 50;
+    let plannedNew = 0;
+    for (const t of trains) if (!entries.current.has(t.id)) plannedNew++;
+    const deferTrajectories = plannedNew > BULK_SPAWN_THRESHOLD;
 
     for (const t of trains) {
       const existing = entries.current.get(t.id);
@@ -745,10 +785,16 @@ function AnimatedTrainLayer({
         // First sighting. For movers, estimate the origin by walking back
         // along the route so the train animates immediately. For stoppers,
         // just place at the platform.
+        //
+        // On bulk spawn (Clear after a filter), we skip the synchronous
+        // estimateOrigin/buildTrajectory and instead spawn at the reported
+        // position with no trajectory. The trains hold still for one tick
+        // (visually fine — they're absorbed into cluster icons anyway), and
+        // we backfill trajectories on the next idle frame below.
         let initialPos: [number, number] = [t.lat, t.lon];
         let trajectory: Trajectory | null = null;
 
-        if (isMoving && routeLines) {
+        if (isMoving && routeLines && !deferTrajectories) {
           const eta = Math.max(endTime - nowSec, 30);
           const origin = estimateOrigin(
             [t.lat, t.lon],
@@ -770,12 +816,20 @@ function AnimatedTrainLayer({
         const marker = L.marker(initialPos, {
           icon: createIcon(t.routeId, t.status),
           zIndexOffset: 100,
-        }).bindPopup(buildPopup(t), { maxWidth: 240 });
+        });
         // Stash route on the marker so the cluster-icon factory can sample
         // a route-color rim without having to look the train up by id.
         (marker as L.Marker & { _routeId?: string })._routeId = t.routeId;
 
         const entry: TrainEntry = { marker, data: t, trajectory };
+
+        // Lazy popup: bindPopup accepts a function and only invokes it on
+        // first open. Passing the rendered string up-front (the previous
+        // approach) ran buildPopup() 600+ times on bulk spawn for popups
+        // 99% of users never click. The closure reads from `entry.data`,
+        // which the refresh loop keeps up to date — so we also avoid the
+        // per-refresh setPopupContent() rebuild.
+        marker.bindPopup(() => buildPopup(entry.data), { maxWidth: 240 });
 
         // Moving markers are nearly impossible to click at 60 Hz: between
         // mousedown and mouseup the icon has shifted a few pixels and
@@ -795,14 +849,21 @@ function AnimatedTrainLayer({
           entry.frozen = false;
         });
 
-        group.addLayer(marker);
-
-        requestAnimationFrame(() => {
-          const el = marker.getElement();
-          if (el) animateEntrance(el);
-        });
-
+        // Buffer for batch insert below. We DON'T call group.addLayer here
+        // because each call rebuilds the cluster's spatial index — death by
+        // a thousand cuts when ~500 markers come in at once on Clear.
+        newMarkers.push(marker);
         entries.current.set(t.id, entry);
+
+        if (deferTrajectories && isMoving && routeLines) {
+          pendingTrajectories.push({
+            entry,
+            target: [t.lat, t.lon],
+            routeId: t.routeId,
+            startTime,
+            endTime,
+          });
+        }
         continue;
       }
 
@@ -814,7 +875,8 @@ function AnimatedTrainLayer({
         existing.marker.setIcon(createIcon(t.routeId, t.status));
         (existing.marker as L.Marker & { _routeId?: string })._routeId = t.routeId;
       }
-      existing.marker.setPopupContent(buildPopup(t));
+      // No setPopupContent() here — the popup is bound as a function that
+      // re-reads entry.data on open, so we get fresh content for free.
 
       if (!isMoving) {
         // Train is stopped — clear trajectory and snap to the platform.
@@ -881,6 +943,78 @@ function AnimatedTrainLayer({
       }
 
       existing.data = t;
+    }
+
+    // ── Pass 3: flush new markers in one batch ─────────────────────────
+    // `addLayers` triggers a single spatial-index rebuild and uses
+    // chunkedLoading internally, so the main thread breathes between chunks.
+    //
+    // For small batches (steady-state refresh: 0–30 newly-spawned trains per
+    // 30s tick) we still get the per-marker entrance animation. For large
+    // batches (Clear after a filter — hundreds of markers) we skip the
+    // entrance pop, both because (a) firing 500 staggered scale-from-0
+    // animations on the same frame produces a visible thrash and burns CPU
+    // for no UX win, and (b) the cluster icons absorb most of these markers
+    // anyway, so the entrance animation isn't even visible.
+    if (newMarkers.length > 0) {
+      const ANIMATE_ENTRANCE_MAX = 60;
+      const animateThese = newMarkers.length <= ANIMATE_ENTRANCE_MAX;
+      group.addLayers(newMarkers);
+      if (animateThese) {
+        // Wait one frame so leaflet has actually attached the elements.
+        requestAnimationFrame(() => {
+          for (const m of newMarkers) {
+            const el = m.getElement();
+            if (el) animateEntrance(el);
+          }
+        });
+      }
+    }
+
+    // ── Pass 4: backfill deferred trajectories on idle ─────────────────
+    // Process in chunks of ~30 per frame so we don't re-create the original
+    // freeze. Anything that fails to snap stays at its reported position
+    // until the next data refresh, which is fine — moving markers without a
+    // trajectory just hold still, and the next refresh rebuilds them via
+    // the targetChanged / trajectoryExpired path.
+    if (pendingTrajectories.length > 0) {
+      const queue = pendingTrajectories;
+      const CHUNK = 30;
+      let i = 0;
+      const drain = () => {
+        const end = Math.min(i + CHUNK, queue.length);
+        for (; i < end; i++) {
+          const job = queue[i];
+          // Skip if the entry has been removed (filter changed again).
+          if (!entries.current.has(job.entry.data.id)) continue;
+          const eta = Math.max(job.endTime - Date.now() / 1000, 30);
+          const origin = estimateOrigin(job.target, job.routeId, eta, routeLines!);
+          const traj = buildTrajectory(
+            origin,
+            job.target,
+            job.routeId,
+            job.startTime,
+            job.endTime,
+            routeLines!,
+          );
+          if (traj) {
+            // Defensive max-speed clamp (mirrors the synchronous path).
+            const minDurationSec = (traj.lengthKm * 1000) / MAX_SPEED_MPS;
+            if (traj.endTime - traj.startTime < minDurationSec) {
+              traj.endTime = traj.startTime + minDurationSec;
+            }
+            job.entry.trajectory = traj;
+            // Reposition to origin so the RAF loop animates from there.
+            // Skip if the marker has no element (clustered or culled) —
+            // the next visible frame will pick up the new trajectory anyway.
+            if (job.entry.marker.getElement()) {
+              job.entry.marker.setLatLng(origin);
+            }
+          }
+        }
+        if (i < queue.length) requestAnimationFrame(drain);
+      };
+      requestAnimationFrame(drain);
     }
   }, [trains, routeLines, map]);
 

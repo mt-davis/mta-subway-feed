@@ -19,7 +19,7 @@ export default function DeltaBadge({ delta, className = '' }: Props) {
   const positive = delta > 0;
   return (
     <span
-      className={`inline-flex items-center gap-0.5 text-[9px] font-bold tabular-nums leading-none ${
+      className={`inline-flex items-center gap-0.5 text-[10px] font-bold tabular-nums leading-none ${
         positive
           ? 'text-emerald-600 dark:text-emerald-400'
           : 'text-rose-600 dark:text-rose-400'
