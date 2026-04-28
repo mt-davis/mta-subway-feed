@@ -1,77 +1,44 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, GizmoHelper, GizmoViewport } from "@react-three/drei";
 import Link from "next/link";
 
 import type { StationModel } from "@/lib/station3d/types";
+import {
+  CAMERA_PRESETS,
+  type CameraPreset,
+  getPreset,
+} from "@/lib/station3d/cameraPresets";
 import { Ground } from "@/components/station3d/Ground";
 import { PlatformSlabs } from "@/components/station3d/PlatformSlabs";
+import { PlatformLabels } from "@/components/station3d/PlatformLabels";
 import { Tracks } from "@/components/station3d/Tracks";
 import { Stairs } from "@/components/station3d/Stairs";
 import { Entrances } from "@/components/station3d/Entrances";
+import { LiveTrains } from "@/components/station3d/LiveTrains";
+import { CameraRig } from "@/components/station3d/CameraRig";
 
-interface CameraPreset {
-  id: string;
-  label: string;
-  description: string;
-  position: [number, number, number];
-  target: [number, number, number];
-}
-
-const CAMERA_PRESETS: CameraPreset[] = [
-  {
-    id: "overview",
-    label: "Overview",
-    description: "Default angled view of the whole station",
-    position: [55, 45, 55],
-    target: [0, -8, 0],
-  },
-  {
-    id: "top",
-    label: "Top down",
-    description: "Plan view from above",
-    position: [0, 90, 0.001], // 0.001 z avoids gimbal lock when straight down
-    target: [0, 0, 0],
-  },
-  {
-    id: "lex",
-    label: "Lex (4/5/6)",
-    description: "Angled view focused on the IRT Lexington level",
-    position: [35, -1, 35],
-    target: [0, -10, 0],
-  },
-  {
-    id: "canarsie",
-    label: "Canarsie (L)",
-    description: "Side view of the deep L line at level −3",
-    position: [0, -10, 45],
-    target: [0, -16, 0],
-  },
-];
-
-// Drei doesn't expose a clean type for the OrbitControls implementation that
-// works without depending on three-stdlib directly, but the only methods we
-// need are object.position.set, target.set, and update(). A minimal structural
-// type keeps this honest without dragging in extra typings.
-interface OrbitControlsLike {
-  object: { position: { set: (x: number, y: number, z: number) => void } };
-  target: { set: (x: number, y: number, z: number) => void };
-  update: () => void;
-}
+const INITIAL_PRESET = "overview";
 
 export default function StationScene({ model }: { model: StationModel }) {
-  const controlsRef = useRef<OrbitControlsLike | null>(null);
-  const [activePreset, setActivePreset] = useState<string>("overview");
+  // Two pieces of state intentionally:
+  //   - `activePresetId` drives the highlighted button + currently advertised
+  //     view. Cleared the moment the user starts dragging so the highlight
+  //     never lies about where the camera is.
+  //   - `tweenTarget` is what CameraRig actually animates toward. We make a
+  //     fresh wrapper object on every preset click so clicking the *same*
+  //     preset twice still re-fires the lerp — useful when the user has
+  //     drifted off and wants to recenter.
+  const [activePresetId, setActivePresetId] = useState<string>(INITIAL_PRESET);
+  const [tweenTarget, setTweenTarget] = useState<CameraPreset | null>(null);
 
   function applyPreset(preset: CameraPreset) {
-    const controls = controlsRef.current;
-    if (!controls) return;
-    controls.object.position.set(...preset.position);
-    controls.target.set(...preset.target);
-    controls.update();
-    setActivePreset(preset.id);
+    // Spread to force a new object identity so CameraRig's useEffect re-fires
+    // even if the user clicks the same preset twice in a row.
+    setTweenTarget({ ...preset });
+    setActivePresetId(preset.id);
   }
 
   return (
@@ -91,17 +58,16 @@ export default function StationScene({ model }: { model: StationModel }) {
         </div>
       </header>
 
-      {/* Camera preset rail — top-right.
-          Sits on top of the Canvas as a regular DOM element; clicks call
-          OrbitControls directly via ref so the camera snaps to the preset
-          without any extra animation infrastructure. Highlighting the active
-          preset gives the user a sense of "where am I looking right now". */}
+      {/* Camera preset rail (top-right). Active state drives the blue
+          highlight; OrbitControls.onStart clears the active id (but NOT the
+          tween target — we keep that consistent so the user can resume the
+          last preset by clicking it again). */}
       <div className="pointer-events-auto absolute z-10 top-4 right-4 flex flex-col gap-1.5 rounded-lg bg-white/10 backdrop-blur p-2 ring-1 ring-white/15">
         <div className="px-2 pb-1 text-[10px] uppercase tracking-[0.18em] text-white/50">
           View
         </div>
         {CAMERA_PRESETS.map((preset) => {
-          const isActive = activePreset === preset.id;
+          const isActive = activePresetId === preset.id;
           return (
             <button
               key={preset.id}
@@ -125,11 +91,18 @@ export default function StationScene({ model }: { model: StationModel }) {
           {model.platforms.length} platforms · {model.tracks.length} tracks ·{" "}
           {model.stairs.length} stairs · {model.entrances.length} entrances
         </div>
-        <div className="text-white/50">Drag to rotate · scroll to zoom</div>
+        <div className="text-white/50">
+          Live train markers · drag to rotate · scroll to zoom
+        </div>
       </div>
 
       <Canvas
-        camera={{ position: [55, 45, 55], fov: 50, near: 0.1, far: 1000 }}
+        camera={{
+          position: getPreset(INITIAL_PRESET)?.position ?? [55, 45, 55],
+          fov: 50,
+          near: 0.1,
+          far: 1000,
+        }}
         shadows
       >
         <color attach="background" args={["#0f172a"]} />
@@ -150,24 +123,28 @@ export default function StationScene({ model }: { model: StationModel }) {
         <Ground />
         <Tracks tracks={model.tracks} origin={model.center} />
         <PlatformSlabs platforms={model.platforms} origin={model.center} />
+        <PlatformLabels platforms={model.platforms} origin={model.center} />
         <Stairs stairs={model.stairs} origin={model.center} />
         <Entrances entrances={model.entrances} origin={model.center} />
+        <LiveTrains platforms={model.platforms} origin={model.center} />
 
         <OrbitControls
-          ref={(instance) => {
-            controlsRef.current = instance as OrbitControlsLike | null;
-          }}
           makeDefault
           enableDamping
           minDistance={5}
           maxDistance={200}
-          target={[0, -8, 0]}
-          // Reset the active preset to "free" if the user starts dragging
-          // so the highlight pill doesn't lie about where the camera is.
+          target={getPreset(INITIAL_PRESET)?.target ?? [0, -8, 0]}
+          // The user grabbing the camera always wins over an in-flight tween.
+          // Clearing the highlight + tween target stops CameraRig dead and
+          // hands control back without the camera fighting the user's drag.
           onStart={() => {
-            setActivePreset("");
+            setActivePresetId("");
+            setTweenTarget(null);
           }}
         />
+
+        <CameraRig active={tweenTarget} />
+
         <GizmoHelper alignment="bottom-right" margin={[80, 80]}>
           <GizmoViewport axisColors={["#ef4444", "#22c55e", "#3b82f6"]} />
         </GizmoHelper>
