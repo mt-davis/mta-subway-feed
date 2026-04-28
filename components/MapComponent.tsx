@@ -23,6 +23,7 @@ import {
 // globals.css) so our dark popup/cluster overrides win at equal specificity.
 import type { Station, TrainPosition, TrainsApiResponse } from '@/lib/types';
 import type { RouteGeoFeature } from '@/lib/gtfs-static';
+import { Station3DMarkersLayer } from '@/components/station3d/MapMarkersLayer';
 import ZoomControls from './ZoomControls';
 import { getRouteColor, getTextColor } from '@/lib/route-colors';
 
@@ -1170,6 +1171,7 @@ export default function MapComponent({
         onShapesLoaded={handleShapesLoaded}
       />
       <AnimatedTrainLayer trains={visible} routeLines={routeLines} />
+      <Station3DMarkersLayer />
     </MapContainer>
   );
 }

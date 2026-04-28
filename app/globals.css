@@ -516,3 +516,68 @@ body {
 :where(html.dark) .leaflet-control-attribution a {
   color: #93c5fd !important;
 }
+
+/* ── 3D station marker ────────────────────────────────────────────
+   The "3D" pill we drop on top of the 2D map for every station with a
+   built-out 3D model. Pulse animation lives here so it doesn't depend on
+   Tailwind's JIT seeing classes inside L.divIcon HTML strings. */
+.station-3d-marker {
+  pointer-events: auto !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.station-3d-pill {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 24px;
+  cursor: pointer;
+  transition: transform 150ms ease-out;
+}
+.station-3d-pill:hover {
+  transform: scale(1.1);
+}
+
+.station-3d-glow {
+  position: absolute;
+  inset: -6px;
+  border-radius: 9999px;
+  background: rgba(59, 130, 246, 0.45);
+  filter: blur(8px);
+  animation: station-3d-pulse 2.4s ease-in-out infinite;
+}
+
+.station-3d-label {
+  position: relative;
+  padding: 3px 8px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  border: 2px solid #ffffff;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.45);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+:where(html.dark) .station-3d-label {
+  border-color: #0f172a;
+}
+
+@keyframes station-3d-pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.85;
+  }
+}
